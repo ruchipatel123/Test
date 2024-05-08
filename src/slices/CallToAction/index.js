@@ -1,6 +1,7 @@
 import { isFilled } from "@prismicio/client";
 import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+<script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=my-testinn-r"></script>
 
 /**
  * @typedef {import("@prismicio/client").Content.CallToActionSlice} CallToActionSlice

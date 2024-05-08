@@ -1,6 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+<script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=my-testinn-r"></script>
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
