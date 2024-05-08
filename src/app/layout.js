@@ -1,9 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-
-<script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=my-testinn-r"></script>
-
-
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName } from "@/prismicio";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -14,6 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <PrismicPreview repositoryName={repositoryName}/>
       <body className={inter.className}>{children}</body>
     </html>
   );
