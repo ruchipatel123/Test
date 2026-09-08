@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cause and FX — We Dare To Make It Happen</title>
+    <meta name="description" content="Cause and FX is a leading New Zealand VFX studio, bringing creativity to life across the big screen and beyond.">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Geist+Mono:wght@300&display=swap">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Runs before first paint: marks the document so the CSS can park every
+         animated element at its start position. Without this the page paints
+         them in place for a frame or two before general.js loads, and you see
+         the content flash before it animates. Skipped under reduced-motion,
+         and general.js removes it again if GSAP is unavailable, so the content
+         is never left hidden. -->
+    <script>
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.className += ' anim-ready';
+        }
+    </script>
+</head>
+<body>
+
+<a class="screen-reader-text skip-link" href="#primary-content">Skip to content</a>
+
+<!-- ==========================================================
+     SITE HEADER
+     ========================================================== -->
+<header class="site-header" id="masthead">
+    <div class="container">
+        <div class="header-inner d-flex align-items-center justify-content-between">
+            <div class="header-brand">
+                <a class="site-logo" href="index.html" title="Cause and FX">
+                    <img class="logo-light" src="images/logo.svg" alt="Cause and FX">
+                    <img class="logo-dark" src="images/logo-dark.svg" alt="Cause and FX">
+                </a>
+
+                <!-- Replaces the logo while the panel is open, matching the design -->
+                <button class="menu-close" type="button" aria-label="Close menu">
+                    <span class="menu-close__bar"></span>
+                    <span class="menu-close__bar"></span>
+                    <span class="menu-close__bar"></span>
+                    <span class="menu-close__bar"></span>
+                </button>
+            </div>
+
+            <div class="header-right d-flex align-items-center">
+                <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
+                    <span class="menu-toggle__bar"></span>
+                    <span class="menu-toggle__bar"></span>
+                    <span class="menu-toggle__bar"></span>
+                    <span class="menu-toggle__bar"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="nav-backdrop" hidden></div>
+
+<!-- ==========================================================
+     SLIDE-IN NAVIGATION PANEL
+     ========================================================== -->
+<nav class="nav-panel" id="primary-navigation" aria-label="Primary navigation">
+    <span class="nav-panel__mark" aria-hidden="true">
+        <span></span>
+        <span></span>
+    </span>
+
+    <span class="nav-panel__rule"></span>
+
+    <div class="primary-nav">
+        <ul>
+            <li><a href="filmography.html" title="Filmography">Filmography</a></li>
+            <li><a href="services.html" title="Services">Services</a></li>
+            <li><a href="people.html" title="People">People</a></li>
+            <li><a href="news.html" title="News &amp; Insights">News &amp; Insights</a></li>
+            <li><a href="careers.html" title="Careers">Careers</a></li>
+            <li><a href="contact.html" title="Contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <span class="nav-panel__rule"></span>
+
+    <div class="nav-panel__social">
+        <span class="social-label">Follow us</span>
+        <ul class="social-list">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on Instagram (opens in new tab)"><img src="images/social/instagram.svg" alt=""></a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on Facebook (opens in new tab)"><img src="images/social/facebook.svg" alt=""></a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on LinkedIn (opens in new tab)"><img src="images/social/linkedin.svg" alt=""></a></li>
+            <li class="social-list__imdb"><a href="https://imdb.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on IMDb (opens in new tab)"><img src="images/social/imdb.svg" alt=""></a></li>
+        </ul>
+    </div>
+</nav>
+
+<main id="primary-content">
+
+    <!-- Hero + intro share a stage so the hero stays pinned only while the
+         intro rides over it, then releases -->
+    <div class="hero-stage">
+
+    <!-- ==========================================================
+         HERO — pinned show-reel video
+         ========================================================== -->
+    <!-- ACF layout: hero_banner -->
+    <section class="hero" aria-label="Show reel">
+        <div class="hero__media-wrap">
+            <video class="hero__media" poster="images/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+                <source src="videos/hero-reel.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="hero__overlay not-active" aria-hidden="true"></div>
+
+        <button class="hero__reel js-reel-open" type="button" aria-haspopup="dialog" aria-controls="show-reel">
+            <img class="hero__reel-icon" src="images/brandmark.svg" alt="">
+            <span class="hero__reel-label">Watch full show reel</span>
+        </button>
+    </section>
+
+    <!-- ==========================================================
+         INTRO — text scrolls over the fading hero
+         ========================================================== -->
+    <!-- ACF layout: intro -->
+    <section class="intro">
+        <div class="container">
+            <h1 class="intro__title display-heading js-rise">
+                <span class="intro__title-line reveal-line js-line-a outline"><span>We dare to</span></span>
+                <span class="intro__title-line reveal-line js-line-b"><span>Make it happen</span></span>
+            </h1>
+
+            <div class="intro__copy lead-copy js-reveal">
+                <p>Cause and FX is a leading VFX studio, bringing creativity to life across the big screen and beyond.</p>
+                <p>We bring stories to life with striking visual effects in film, television and beyond. Our artistry and innovation set us apart.</p>
+            </div>
+        </div>
+    </section>
+
+    </div><!-- /.hero-stage -->
+
+    <!-- ==========================================================
+         PARALLAX BAND — "DELIVERING THE EXTRAORDINARY"
+         ========================================================== -->
+    <!-- ACF layout: parallax_band -->
+    <section class="parallax-band stack-pin" aria-label="Delivering the extraordinary">
+        <div class="parallax-band__bg"></div>
+
+        <h2 class="parallax-band__title display-heading">
+            <span class="parallax-band__line js-slide-left outline">Delivering the</span>
+            <span class="parallax-band__line js-slide-right">Extraordinary</span>
+        </h2>
+    </section>
+
+    <!-- ==========================================================
+         FILMOGRAPHY
+         ========================================================== -->
+    <!-- ACF layout: filmography -->
+    <section class="filmography">
+        <div class="filmography__panel">
+            <div class="container">
+                <h2 class="eyebrow filmography__eyebrow js-reveal">Our filmography</h2>
+
+                <ul class="filmography__grid row g-3">
+                    <li class="col-6 filmography__item js-poster">
+                        <a class="poster" href="filmography.html" title="East of Eden">
+                            <img src="images/posters/east-of-eden.jpg" alt="East of Eden — a Netflix series">
+                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
+                        </a>
+                    </li>
+                    <li class="col-6 filmography__item js-poster">
+                        <a class="poster" href="filmography.html" title="The Wrecking Crew">
+                            <img src="images/posters/wrecking-crew.jpg" alt="The Wrecking Crew — a Prime Video original movie">
+                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
+                        </a>
+                    </li>
+                    <li class="col-6 filmography__item js-poster">
+                        <a class="poster" href="filmography.html" title="Star Trek: Strange New Worlds">
+                            <img src="images/posters/strange-new-worlds.jpg" alt="Star Trek: Strange New Worlds — a Paramount+ original">
+                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
+                        </a>
+                    </li>
+                    <li class="col-6 filmography__item js-poster">
+                        <a class="poster" href="filmography.html" title="Chief of War">
+                            <img src="images/posters/chief-of-war.jpg" alt="Chief of War, starring Jason Momoa — an Apple TV+ series">
+                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
+                        </a>
+                    </li>
+                    <li class="col-6 filmography__item js-poster">
+                        <a class="poster" href="filmography.html" title="M3GAN 2.0">
+                            <img src="images/posters/megan-2.jpg" alt="M3GAN 2.0">
+                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
+                        </a>
+                    </li>
+                    <li class="col-6 filmography__item js-poster">
+                        <a class="poster" href="filmography.html" title="Star Trek: Starfleet Academy">
+                            <img src="images/posters/starfleet-academy.jpg" alt="Star Trek: Starfleet Academy — a Paramount+ original series">
+                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
+                        </a>
+                    </li>
+                    <li class="col-6 filmography__item js-poster">
+                        <a class="poster" href="filmography.html" title="Spartacus: House of Ashur">
+                            <img src="images/posters/spartacus.jpg" alt="Spartacus: House of Ashur — a Starz series">
+                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
+                        </a>
+                    </li>
+                    <li class="col-6 filmography__item js-poster">
+                        <a class="poster" href="filmography.html" title="Twisted Metal">
+                            <img src="images/posters/twisted-metal.jpg" alt="Twisted Metal">
+                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
+                        </a>
+                    </li>
+                    <li class="col-6 filmography__item js-poster">
+                        <a class="poster" href="filmography.html" title="Zombies 4: Dawn of the Vampires">
+                            <img src="images/posters/zombies-4.jpg" alt="Disney Zombies 4: Dawn of the Vampires">
+                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
+                        </a>
+                    </li>
+                    <li class="col-6 filmography__item js-poster">
+                        <a class="poster" href="filmography.html" title="Star Trek: Section 31">
+                            <img src="images/posters/section-31.jpg" alt="Star Trek: Section 31, starring Michelle Yeoh">
+                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="filmography__footer c-row">
+                    <div class="filmography__copy body-copy js-reveal">
+                        <p>We deliver jaw-dropping, enthralling visual effects across some of the most memorable productions of the last decade.</p>
+                        <p>From Star Trek&rsquo;s deep reaches of space to Twisted Metal&rsquo;s gritty post-apocalypse, from Mordor&rsquo;s craggy peaks in Rings of Power to the high seas of Our Flag means Death, we believe the power of limitless creativity and innovation pushes the frontier of what can be achieved.</p>
+                    </div>
+                    <div class="filmography__action js-reveal">
+                        <a class="btn btn-red-border" href="filmography.html" title="View more">View more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         SERVICES
+         ========================================================== -->
+    <!-- ACF layout: services -->
+    <section class="services">
+        <div class="container">
+            <h2 class="eyebrow services__eyebrow js-reveal">Unleashing what we&rsquo;re capable of</h2>
+        </div>
+
+        <!-- Display words: a right-descending staircase that sweeps in from the left -->
+        <div class="container">
+            <div class="services__words" aria-hidden="true">
+                <span class="services__word display-heading js-stair">Dare.</span>
+                <span class="services__word display-heading js-stair outline">Craft.</span>
+                <span class="services__word display-heading js-stair">Deliver.</span>
+            </div>
+        </div>
+        <h3 class="sr-only">Dare. Craft. Deliver.</h3>
+
+        <!-- Horizontal card track -->
+        <div class="services__viewport">
+            <!-- The second set is a duplicate so the marquee can loop seamlessly -->
+            <ul class="services__track js-service-track">
+                <li class="service-card">
+                    <a class="service-card__link" href="services.html" title="Large format &amp; immersive">
+                        <video class="service-card__media" poster="images/services/service-large-format.jpg"
+                           autoplay muted loop playsinline preload="none"
+                           aria-label="Large format and immersive work — a figure on a rocky hillside">
+                            <source src="videos/service-large-format.mp4" type="video/mp4">
+                        </video>
+                    <span class="service-card__label">Large format &amp; immersive</span>
+                </a>
+                </li>
+                <li class="service-card">
+                    <a class="service-card__link" href="services.html" title="Visual effects">
+                        <video class="service-card__media" poster="images/services/service-visual-effects.jpg"
+                           autoplay muted loop playsinline preload="none"
+                           aria-label="Visual effects work — a flaming character from Twisted Metal">
+                            <source src="videos/service-visual-effects.mp4" type="video/mp4">
+                        </video>
+                    <span class="service-card__label">Visual effects</span>
+                </a>
+                </li>
+                <li class="service-card">
+                    <a class="service-card__link" href="services.html" title="Virtual production">
+                        <video class="service-card__media" poster="images/services/service-virtual-production.jpg"
+                           autoplay muted loop playsinline preload="none"
+                           aria-label="Virtual production work — a period street scene">
+                            <source src="videos/service-virtual-production.mp4" type="video/mp4">
+                        </video>
+                    <span class="service-card__label">Virtual production</span>
+                </a>
+                </li>
+                <li class="service-card" aria-hidden="true">
+                    <a class="service-card__link" href="services.html" title="Large format &amp; immersive" tabindex="-1">
+                        <video class="service-card__media" poster="images/services/service-large-format.jpg"
+                           autoplay muted loop playsinline preload="none" tabindex="-1"
+                           aria-label="Large format and immersive work — a figure on a rocky hillside">
+                            <source src="videos/service-large-format.mp4" type="video/mp4">
+                        </video>
+                    <span class="service-card__label">Large format &amp; immersive</span>
+                </a>
+                </li>
+                <li class="service-card" aria-hidden="true">
+                    <a class="service-card__link" href="services.html" title="Visual effects" tabindex="-1">
+                        <video class="service-card__media" poster="images/services/service-visual-effects.jpg"
+                           autoplay muted loop playsinline preload="none" tabindex="-1"
+                           aria-label="Visual effects work — a flaming character from Twisted Metal">
+                            <source src="videos/service-visual-effects.mp4" type="video/mp4">
+                        </video>
+                    <span class="service-card__label">Visual effects</span>
+                </a>
+                </li>
+                <li class="service-card" aria-hidden="true">
+                    <a class="service-card__link" href="services.html" title="Virtual production" tabindex="-1">
+                        <video class="service-card__media" poster="images/services/service-virtual-production.jpg"
+                           autoplay muted loop playsinline preload="none" tabindex="-1"
+                           aria-label="Virtual production work — a period street scene">
+                            <source src="videos/service-virtual-production.mp4" type="video/mp4">
+                        </video>
+                    <span class="service-card__label">Virtual production</span>
+                </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="services__footer c-row">
+                <div class="services__copy body-copy js-reveal">
+                    <p>Visual effects is a landscape of opportunity and ambition, and we thrive on discovering the creative solutions to even the most technical challenges.</p>
+                    <p>A team of creative problem-solvers, we approach every project with intention and technical depth, solving problems and going beyond the brief for our partners. And when we show up, it&rsquo;s with the calm, predictable execution that protects budgets and timelines.</p>
+                </div>
+                <div class="services__action js-reveal">
+                    <a class="btn" href="services.html" title="View services">View services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         OUR TEAM
+         ========================================================== -->
+    <!-- ACF layout: our_team -->
+    <section class="our-team stack-pin">
+        <div class="angled-panel">
+        <div class="container">
+            <h2 class="eyebrow our-team__eyebrow js-reveal">Story telling is in our soul</h2>
+
+            <div class="display-heading our-team__title js-rise">
+                <span class="outline">Our</span>
+                <span>Team</span>
+            </div>
+
+            <div class="our-team__row c-row">
+                <div class="our-team__media js-reveal">
+                    <img src="images/team.jpg" alt="Two Cause and FX artists reviewing a character render on screen">
+                </div>
+
+                <div class="our-team__content js-reveal">
+                    <h3 class="subheading">Pushing our expertise beyond what&rsquo;s possible</h3>
+                    <div class="body-copy">
+                        <p>Established in 2011, Cause and FX has quickly risen to become one of New Zealand&rsquo;s leading independent VFX studios. Our team of passionate, capable artists bring creative flair to everything we do.</p>
+                    </div>
+                    <a class="btn our-team__btn" href="people.html" title="Meet the team">Meet the team</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         TOP STUDIOS
+         ========================================================== -->
+    <!-- ACF layout: top_studios -->
+    <section class="top-studios stack-pin">
+        <div class="angled-panel">
+        <div class="container">
+            <h2 class="eyebrow top-studios__eyebrow js-reveal">Trusted by the world&rsquo;s</h2>
+
+            <div class="top-studios__head c-row">
+                <div class="display-heading top-studios__title js-rise">
+                    <span class="outline">Top</span>
+                    <span>Studios</span>
+                </div>
+
+                <div class="top-studios__copy body-copy js-reveal">
+                    <p>Our industry&rsquo;s visionaries trust us to protect and deliver on their creative vision. They turn to Cause and FX to tackle the big jobs, round out the projects and protect their IP.</p>
+                </div>
+            </div>
+
+            <span class="top-studios__rule js-rule"></span>
+
+            <ul class="studio-logos row row-cols-2">
+                <li class="col studio-logos__item js-logo"><img src="images/logos/paramount.svg" alt="Paramount"></li>
+                <li class="col studio-logos__item js-logo"><img src="images/logos/netflix.svg" alt="Netflix"></li>
+                <li class="col studio-logos__item js-logo"><img src="images/logos/disney.svg" alt="Disney"></li>
+                <li class="col studio-logos__item js-logo"><img src="images/logos/prime-amgm.svg" alt="Prime Video and Amazon MGM Studios"></li>
+                <li class="col studio-logos__item js-logo"><img src="images/logos/hbo.svg" alt="HBO"></li>
+                <li class="col studio-logos__item js-logo"><img src="images/logos/lionsgate.svg" alt="Lionsgate"></li>
+                <li class="col studio-logos__item js-logo"><img src="images/logos/sony-pictures.svg" alt="Sony Pictures"></li>
+                <li class="col studio-logos__item js-logo"><img src="images/logos/peacock.svg" alt="Peacock"></li>
+                <li class="col studio-logos__item js-logo"><img src="images/logos/abc-signature.svg" alt="ABC Signature"></li>
+                <li class="col studio-logos__item js-logo"><img src="images/logos/a24.svg" alt="A24"></li>
+            </ul>
+        </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         PROBLEM SOLVERS
+         ========================================================== -->
+    <!-- ACF layout: problem_solvers -->
+    <section class="problem-solvers stack-pin">
+        <div class="angled-panel">
+        <div class="container">
+            <h2 class="eyebrow problem-solvers__eyebrow js-reveal">A steady hand</h2>
+
+            <div class="display-heading problem-solvers__title js-rise">
+                <span class="outline">Problem</span>
+                <span>Solvers</span>
+            </div>
+
+            <div class="problem-solvers__row c-row">
+                <div class="problem-solvers__media js-reveal">
+                    <img src="images/problem-solvers.jpg" alt="A flaming-headed Twisted Metal character beside an ice cream truck">
+                </div>
+
+                <div class="problem-solvers__content js-reveal">
+                    <div class="body-copy">
+                        <p>We are your true creative partners. Our value is best felt when we&rsquo;re involved early in a project, offering creative input and solutions early in the process. We&rsquo;re natural problem-solvers, and our record of working with top clients like Disney, Apple, Netflix, Amazon and Paramount speaks for itself.</p>
+                    </div>
+                    <a class="btn problem-solvers__btn" href="about.html" title="Learn more">Learn more</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         FINAL CTA — parallax
+         ========================================================== -->
+    <!-- ACF layout: final_cta -->
+    <section class="final-cta">
+        <div class="final-cta__bg"></div>
+
+        <div class="container final-cta__inner">
+            <h2 class="eyebrow final-cta__eyebrow js-reveal">Ready to bring your</h2>
+
+            <div class="display-heading final-cta__title js-rise">
+                <span class="reveal-line outline"><span>Imagination</span></span>
+                <span class="reveal-line"><span>To life?</span></span>
+            </div>
+
+            <div class="final-cta__action js-reveal">
+                <a class="btn" href="contact.html" title="Get in touch">Get in touch</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ==========================================================
+     FOOTER
+     ========================================================== -->
+<footer class="site-footer" id="colophon">
+        <div class="site-footer__top c-row">
+            <div class="site-footer__brand">
+                <a class="site-footer__logo" href="index.html" title="Cause and FX">
+                    <img src="images/logo.svg" alt="Cause and FX">
+                </a>
+            </div>
+
+            <nav class="site-footer__nav" aria-label="Footer navigation">
+                <ul class="site-footer__links">
+                    <li><a href="filmography.html" title="Filmography">Filmography</a></li>
+                    <li><a href="services.html" title="Services">Services</a></li>
+                    <li><a href="people.html" title="People">People</a></li>
+                </ul>
+            </nav>
+
+
+            <nav class="site-footer__nav" aria-label="Footer navigation">
+                <ul class="site-footer__links">
+                    <li><a href="news.html" title="News &amp; Insights">News &amp; Insights</a></li>
+                    <li><a href="careers.html" title="Careers">Careers</a></li>
+                    <li><a href="contact.html" title="Contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="site-footer__updates">
+                <span class="site-footer__label">Keep updated</span>
+                <a class="site-footer__subscribe" href="contact.html" title="Subscribe to our news">Subscribe to our news</a>
+            </div>
+
+            <div class="site-footer__social">
+                <span class="site-footer__label">Follow us</span>
+                <ul class="social-list">
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on Instagram (opens in new tab)"><img src="images/social/instagram.svg" alt=""></a></li>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on Facebook (opens in new tab)"><img src="images/social/facebook.svg" alt=""></a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on LinkedIn (opens in new tab)"><img src="images/social/linkedin.svg" alt=""></a></li>
+                    <li class="social-list__imdb"><a href="https://imdb.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on IMDb (opens in new tab)"><img src="images/social/imdb.svg" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="site-footer__bottom c-row">
+            <div class="site-footer__copyright">
+                <p>&copy; <span class="footer-year">2026</span> Cause and FX.</p>
+            </div>
+            <a class="site-footer__terms" href="https://causeandfx.nz/copyright" target="_blank" rel="noopener noreferrer">Terms of Use &amp; Privacy Policy <span class="sr-only">(opens in new tab)</span></a>
+        </div>
+</footer>
+
+<!-- ==========================================================
+     SHOW REEL OVERLAY — full-bleed black, closes on X / Esc / backdrop
+     ========================================================== -->
+<div class="reel-modal" id="show-reel" role="dialog" aria-modal="true" aria-label="Cause and FX show reel" hidden>
+    <button class="reel-modal__close js-reel-close" type="button" aria-label="Close video">
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="reel-modal__stage">
+        <!-- Full-length reel, Vimeo-hosted with Vimeo's own play/pause controls.
+             Swap the id in data-src for the client's video. The src is only set
+             when the overlay opens and cleared on close, so the embed does not
+             load with the page and playback stops when it is dismissed. -->
+        <iframe class="reel-modal__video js-reel-video"
+                data-src="https://player.vimeo.com/video/1168653963?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
+                title="Cause and FX show reel"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen></iframe>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/general.js"></script>
+
+</body>
+</html>

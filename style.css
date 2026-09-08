@@ -1,0 +1,3667 @@
+/*!
+Project: Cause and FX
+File: style.css — section styles (mobile base + desktop defaults at end)
+*/
+
+/*-===== Homepage style start here =======*/
+
+
+/*-- Hero start --*/
+
+/* Mammut-style stage: hero pins while video fades to solid red; intro scrolls over */
+.hero-stage {
+    position: relative;
+    z-index: 1;
+    background-color: var(--color-red);
+}
+
+/* Pinned via GSAP — video fades out over this red, not a scrolling gradient */
+.hero {
+    position: relative;
+    height: 100vh;
+    height: 100svh;
+    min-height: 560px;
+    max-height: 887px;
+    overflow: hidden;
+    background-color: var(--color-red);
+    z-index: 1;
+}
+
+.hero__media-wrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 2;
+    will-change: transform, opacity;
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 1;
+    background-color: var(--color-red);
+    pointer-events: none;
+}
+
+.hero__overlay.not-active,
+.hero__overlay.active {
+    background-color: var(--color-red);
+}
+
+.hero__media {
+    display: block;
+    width: 100%;
+    height: 110%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero__reel {
+    position: absolute;
+    left: 42px;
+    bottom: 47px;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero__reel-icon {
+    display: block;
+    width: 19px;
+    height: auto;
+    flex: 0 0 auto;
+}
+
+.hero__reel-label {
+    font-size: var(--fontsize-reel-label);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: var(--tracking-reel-label);
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+
+.hero__reel:hover {
+    opacity: 1;
+}
+
+.hero__reel:hover .hero__reel-label {
+    opacity: 0.75;
+}
+
+
+
+/*-- Hero end ---*/
+
+
+/*-- Intro start --*/
+
+/* Transparent — red comes from the pinned hero behind, not a scrolling gradient */
+.intro {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    padding: 180px 0 80px;
+    background-color: transparent;
+    background-image: none;
+}
+
+.intro__title {
+    text-align: center;
+    margin-bottom: 34px;
+    letter-spacing: 1.7px;
+}
+
+.intro__title-line {
+    display: block;
+}
+
+.intro__title-line + .intro__title-line {
+    margin-top: -2px;
+}
+
+.intro__copy {
+    text-align: left;
+}
+
+.intro__copy p {
+    line-height: normal;
+}
+
+
+
+
+
+
+
+/*-- Intro end ---*/
+
+
+/*-- Parallax band start --*/
+
+.parallax-band {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 873px;
+    min-height: max(873px, 85svh);
+    padding: 0;
+    overflow: hidden;
+}
+
+.parallax-band__bg {
+    position: absolute;
+    inset: -12% 0;
+    background-image: url('images/m-parallax-bg.webp');
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+.parallax-band__title {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0 var(--gutter);
+    text-align: center;
+    margin-left: 0;
+    letter-spacing: 2.38px;
+}
+
+.parallax-band__line {
+    display: block;
+    line-height: normal;
+}
+
+.parallax-band__line + .parallax-band__line {
+    margin-top: 6px;
+}
+
+section.parallax-band.stack-pin.is-unpinned {
+    position: relative;
+}
+
+
+
+/*-- Parallax band end ---*/
+
+
+/*-- Filmography start --*/
+
+.filmography {
+    position: relative;
+    z-index: 4;
+    padding: 0 0 60px;
+    background-image: -webkit-linear-gradient(top, rgba(195, 22, 28, 0) 0%, rgba(195, 22, 28, 0.04) 6%, rgba(195, 22, 28, 0.09) 12%, rgba(195, 22, 28, 0.15) 18%, rgba(195, 22, 28, 0.22) 24%, rgba(195, 22, 28, 0.30) 30%, rgba(195, 22, 28, 0.38) 36%, rgba(195, 22, 28, 0.46) 42%, rgba(195, 22, 28, 0.54) 48%, rgba(195, 22, 28, 0.62) 54%, rgba(195, 22, 28, 0.69) 60%, rgba(195, 22, 28, 0.76) 66%, rgba(195, 22, 28, 0.82) 72%, rgba(195, 22, 28, 0.87) 78%, rgba(195, 22, 28, 0.91) 84%, rgba(195, 22, 28, 0.95) 90%, rgba(195, 22, 28, 0.98) 96%, var(--color-red) 100%);
+    background-image: linear-gradient(180deg, rgba(195, 22, 28, 0) 0%, rgba(195, 22, 28, 0.04) 6%, rgba(195, 22, 28, 0.09) 12%, rgba(195, 22, 28, 0.15) 18%, rgba(195, 22, 28, 0.22) 24%, rgba(195, 22, 28, 0.30) 30%, rgba(195, 22, 28, 0.38) 36%, rgba(195, 22, 28, 0.46) 42%, rgba(195, 22, 28, 0.54) 48%, rgba(195, 22, 28, 0.62) 54%, rgba(195, 22, 28, 0.69) 60%, rgba(195, 22, 28, 0.76) 66%, rgba(195, 22, 28, 0.82) 72%, rgba(195, 22, 28, 0.87) 78%, rgba(195, 22, 28, 0.91) 84%, rgba(195, 22, 28, 0.95) 90%, rgba(195, 22, 28, 0.98) 96%, var(--color-red) 100%);
+}
+
+.filmography__panel {
+    background-color: rgba(0, 0, 0, 0.9);
+    margin: 0 var(--gutter);
+    padding: 52px 0 60px;
+}
+
+.filmography__eyebrow {
+    text-align: center;
+    max-width: 268px;
+    margin: 0 auto 40px;
+    letter-spacing: 7px;
+}
+
+.filmography__grid {
+    list-style: none;
+    padding: 0;
+    /* keep Bootstrap's negative row margins — zeroing them pulls the posters
+       inward by half a gutter, so the grid stops spanning the container */
+    margin: 0 calc(-0.5 * var(--bs-gutter-x)) 44px;
+    justify-content: center;
+    overflow: visible;
+    --bs-gutter-x: 14px;
+    --bs-gutter-y: 14px;
+}
+
+.filmography__item {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+}
+
+.poster {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transition: -webkit-transform 0.8s var(--ease-out), transform 0.8s var(--ease-out), z-index 0s 0.8s;
+    transition: transform 0.8s var(--ease-out), z-index 0s 0.8s;
+}
+
+.poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 155 / 233;
+    object-fit: cover;
+}
+
+.poster__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-in-out;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.poster__label {
+    font-family: var(--font-mono);
+    font-size: var(--fontsize-card-label);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: var(--tracking-card-label);
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+
+.poster:hover,
+.poster:focus-visible {
+    overflow: visible;
+    z-index: 5;
+    -webkit-transition: -webkit-transform 0.8s var(--ease-out), transform 0.8s var(--ease-out), z-index 0s 0s;
+    transition: transform 0.8s var(--ease-out), z-index 0s 0s;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.poster:hover .poster__overlay,
+.poster:focus-visible .poster__overlay {
+    opacity: 1;
+}
+
+.filmography__footer {
+    flex-direction: column;
+    gap: 34px;
+}
+
+.filmography__action .btn {
+    min-width: 216px;
+}
+
+
+
+
+
+/*-- Filmography end ---*/
+
+
+/*-- Services start --*/
+
+.services {
+    position: relative;
+    z-index: 5;
+    padding: 70px 0 60px;
+    overflow: hidden;
+    background-image: -webkit-linear-gradient(top, var(--color-red) 49.5%, var(--color-red-dark) 100%);
+    background-image: linear-gradient(180deg, var(--color-red) 49.5%, var(--color-red-dark) 100%);
+}
+
+.services__eyebrow {
+    text-align: center;
+    max-width: 268px;
+    margin: 0 auto;
+}
+
+/* No overflow clip here — the words fly in from off the left of the window,
+   and this box is only as wide as the staircase. .services clips instead, so
+   nothing spills into a horizontal scrollbar. */
+.services__words {
+    position: relative;
+    padding: 26px 0 40px;
+    text-align: center;
+}
+
+.services__word {
+    display: block;
+    white-space: nowrap;
+    will-change: transform;
+    line-height: 45px;
+}
+
+.services__word + .services__word {
+    margin-top: -7px;
+}
+
+/* Grab-to-scroll: pan-y keeps vertical page scrolling working on touch while
+   horizontal drags belong to the strip. */
+.services__viewport {
+    cursor: grab;
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.services__viewport.is-dragging {
+    cursor: grabbing;
+}
+
+.services__viewport.is-dragging .service-card__link {
+    pointer-events: none;
+}
+
+.service-card__link {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    -webkit-user-drag: none;
+}
+
+.service-card__link:hover {
+    opacity: 1;
+}
+
+.service-card__link img,
+.service-card__link video {
+    pointer-events: none;
+}
+
+.services__viewport {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 44px;
+}
+
+.services__track {
+    display: flex;
+    align-items: stretch;
+    gap: 13px;
+    list-style: none;
+    padding: 0 var(--gutter);
+    margin: 0;
+    width: max-content;
+    will-change: transform;
+}
+
+.service-card {
+    position: relative;
+    flex: 0 0 auto;
+    width: 327px;
+    border-radius: 20px;
+    overflow: hidden;
+    line-height: 0;
+}
+
+/* <video> with a poster — shows the still until the client adds a source */
+/* <video> with a poster — shows the still until the client adds a source */
+.service-card__media {
+    display: block;
+    width: 100%;
+    aspect-ratio: 850 / 541;
+    object-fit: cover;
+    background-color: var(--color-red-dark);
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 65.87%, rgba(0, 0, 0, 0.6) 100%);
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 65.87%, rgba(0, 0, 0, 0.6) 100%);
+    pointer-events: none;
+}
+
+.service-card__label {
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    z-index: 2;
+    font-size: var(--fontsize-card-label);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: var(--tracking-card-label);
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+
+.services__footer {
+    flex-direction: column;
+    gap: 34px;
+}
+
+.services__action .btn {
+    min-width: 223px;
+}
+
+
+
+/*-- Services end ---*/
+
+
+/*-- Stacked pin --------------------------------------------------------
+   In the prototype each of these sections holds still at the top of the
+   viewport while the NEXT section slides up over it, like a stack of cards.
+   Sticky siblings give exactly that: each one pins at top:0 and is then
+   covered by the following (opaque, higher z-index) section.
+
+   Only enabled where there is room for a full viewport-height panel —
+   below that the sections simply scroll, which is the safe fallback.
+   Responsive rules: merged in style.css below
+   ---------------------------------------------------------------------- */
+
+
+/*-- Angled panel -------------------------------------------------------
+   These sections are not full-bleed: an inset panel (~19px from
+   each side) carries the colour and the notched top-left corner, and the
+   gutter around it lets the section — or the pinned section behind it —
+   show through. The notch is a 45° cut — --notch-span is the horizontal
+   run of the diagonal and equals --notch-depth; --notch-in is always
+   calc(--notch-out - var(--notch-span)). Values per section shift right
+   so the fixed header logo sits in the cutout as panels stack on scroll.
+   Desktop (1025–1999px): notch depth + per-section in/out offsets sized for header logo.
+   Large screens (2000px+): see responsive block below — Figma page 4 geometry.
+   ---------------------------------------------------------------------- */
+
+.angled-panel {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    min-height: auto;
+}
+
+
+
+/*-- Our team start --*/
+
+/* The dark red that sits BEHIND the panel and shows through the gutter */
+.our-team {
+    position: relative;
+    z-index: 6;
+    overflow: hidden;
+    background-color: var(--color-red-dark);
+}
+
+.our-team .angled-panel {
+    padding: 78px 0 70px;
+    background-color: var(--color-red);
+    /* The embossed X motif, plus the fade toward #2d0203 that sits
+       over its lower half in the design. The artwork's own notched corner has
+       been filled in — the corner comes from .angled-panel's clip-path, so the
+       two cannot drift out of alignment as the panel resizes. */
+    background-image: linear-gradient(180deg, rgba(45, 2, 3, 0) 42%, rgba(45, 2, 3, 0.55) 100%),
+                      url('images/team-texture.webp');
+    /* 100% auto, not cover: at the panel's 1402px the artwork lands at
+       1402x991 at the panel width, so the X motif keeps its
+       designed scale instead of being cropped to the panel's aspect. */
+    background-size: auto, 100% auto;
+    background-position: center, center top;
+    background-repeat: no-repeat, no-repeat;
+}
+
+.our-team .container {
+    position: relative;
+    z-index: 2;
+}
+
+.our-team__eyebrow {
+    text-align: center;
+    max-width: 268px;
+    margin: 0 auto 8px;
+}
+
+.our-team__title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.our-team__row {
+    flex-direction: column;
+    gap: 30px;
+}
+
+.our-team__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 353 / 208;
+    object-fit: cover;
+}
+
+.our-team__content .subheading {
+    margin-bottom: 16px;
+}
+
+.our-team__btn {
+    margin-top: 34px;
+    min-width: 230px;
+}
+
+
+
+
+
+/*-- Our team end ---*/
+
+
+/*-- Top studios start --*/
+
+/* Transparent section — the gutter reveals the pinned section behind */
+.top-studios {
+    position: relative;
+    z-index: 7;
+    overflow: hidden;
+}
+
+.top-studios .angled-panel {
+    padding: 78px 0 70px;
+    background-color: var(--color-black);
+}
+
+.top-studios__eyebrow {
+    text-align: center;
+    max-width: 268px;
+    margin: 0 auto 8px;
+}
+
+.top-studios__title {
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.top-studios__head {
+    flex-direction: column;
+}
+
+.top-studios__rule {
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 36px 0 40px;
+    background-color: var(--color-red);
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.studio-logos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    --bs-gutter-y: 42px;
+}
+
+.studio-logos__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.studio-logos__item img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+
+/*-- Top studios end ---*/
+
+
+/*-- Problem solvers start --*/
+
+.problem-solvers {
+    position: relative;
+    z-index: 8;
+    overflow: hidden;
+}
+
+.problem-solvers .angled-panel {
+    padding: 78px 0 80px;
+    background-color: var(--color-red);
+}
+
+.problem-solvers__eyebrow {
+    text-align: center;
+    max-width: 268px;
+    margin: 0 auto 8px;
+}
+
+.problem-solvers__title {
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 45px;
+}
+
+.problem-solvers__title span:last-child {
+    display: block;
+    margin-top: -12px;
+}
+
+.problem-solvers__row {
+    flex-direction: column;
+    gap: 30px;
+}
+
+.problem-solvers__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 353 / 209;
+    object-fit: cover;
+}
+
+.problem-solvers__btn {
+    margin-top: 34px;
+    min-width: 223px;
+}
+
+
+
+
+
+
+
+/*-- Problem solvers end ---*/
+
+
+/*-- Final CTA start --*/
+
+.final-cta {
+    position: relative;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 937px;
+    padding: 120px 0 100px;
+    overflow: hidden;
+    background-color: var(--color-cta-bg);
+}
+
+.final-cta__bg {
+    position: absolute;
+    top: -12%;
+    bottom: -12%;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    /* GSAP scrubs scale + radius on this as the section enters, so it needs
+       its own stacking/paint context to stay crisp while it grows */
+    overflow: hidden;
+    will-change: transform;
+    background-color: var(--color-cta-bg);
+    background-image: url('images/m-final-cta.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.final-cta__inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.final-cta__eyebrow {
+    max-width: 353px;
+    margin: 0 auto 6px;
+}
+
+.final-cta__title {
+    margin-bottom: 44px;
+}
+
+.final-cta__title > span {
+    display: block;
+}
+
+.final-cta__action .btn {
+    min-width: 223px;
+}
+
+
+
+/*-- Final CTA end ---*/
+
+
+/*======= Homepage style end =======*/
+
+
+/*-- Site footer start --*/
+
+.site-footer {
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    padding: 40px var(--gutter) 20px;
+    background-color: var(--color-red);
+    background-image: url('images/footer-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.site-footer__top.c-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 95px;
+    row-gap: 40px;
+    flex-direction: unset;
+    flex-wrap: unset;
+}
+
+.site-footer__brand {
+    grid-column: 1 / -1;
+}
+
+.site-footer__nav:first-of-type {
+    grid-column: 1;
+}
+
+.site-footer__nav:last-of-type {
+    grid-column: 2;
+}
+
+.site-footer__updates,
+.site-footer__social {
+    grid-column: 1 / -1;
+}
+
+.site-footer__logo {
+    display: block;
+    width: 94px;
+    line-height: 0;
+}
+
+.site-footer__logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.site-footer__nav {
+    display: block;
+}
+
+.site-footer__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-footer__links li {
+    margin-bottom: 7px;
+}
+
+.site-footer__links li:last-child {
+    margin-bottom: 0;
+}
+
+.site-footer__links a {
+    font-size: var(--fontsize-footer-link);
+    font-weight: 400;
+    line-height: 25px;
+    color: var(--color-white);
+    text-transform: capitalize;
+}
+
+.site-footer__label {
+    display: block;
+    margin-bottom: 13px;
+    font-size: var(--fontsize-footer-label);
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: var(--tracking-footer-label);
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+
+.site-footer__social .site-footer__label {
+    margin-bottom: 11px;
+}
+
+.site-footer__subscribe {
+    font-size: var(--fontsize-footer-link);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--color-white);
+    text-decoration: underline;
+    text-underline-offset: var(--text-underline-offset);
+}
+
+.site-footer__bottom {
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 40px;
+    padding-top: 7px;
+    border-top: 1px solid var(--color-white);
+}
+
+.site-footer__copyright p,
+.site-footer__terms {
+    margin: 0;
+    font-size: var(--fontsize-micro);
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: var(--tracking-copyright);
+    color: var(--color-white);
+}
+
+.site-footer__terms {
+    text-decoration: underline;
+    text-underline-offset: var(--text-underline-offset);
+    text-align: right;
+}
+
+
+
+/* Narrow desktop — 1025px layout before the 1240px container cap */
+
+
+/*-- Site footer end ---*/
+
+
+/*-- Scroll-animation base states --*/
+
+.js-reveal,
+.js-poster,
+.js-logo {
+    will-change: transform, opacity;
+}
+
+/* Note: no hidden-by-default states live in CSS — GSAP sets the "from"
+   states at runtime, so the page degrades to fully visible without JS. */
+
+
+
+
+/*-- Short desktop viewports ------------------------------------------------
+   Panels taller than the viewport cannot pin — sticky would hold the top and
+   the rest would never be reachable. At these heights the pinned sections trim
+   their padding and cap their media so each one fits inside 100vh.
+   ------------------------------------------------------------------------ */
+
+
+
+
+/*-- Mid-height desktop viewports -------------------------------------------
+   Between these heights the full-size panel (about 1060px) still will not fit
+   in 100vh, but there is more room than the short tier assumes.
+   ------------------------------------------------------------------------ */
+
+
+
+/*-- Show reel overlay ------------------------------------------------------
+   Show reel overlay: 1440 x 886 on solid #000, close X top-right,
+   player centred. The design mocks a Vimeo embed; this uses a native <video>
+   so it works without an account — swap in the iframe when the reel is ready.
+   ------------------------------------------------------------------------ */
+
+.reel-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 20px;
+    background-color: var(--color-black);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s;
+    transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s;
+}
+
+.reel-modal[hidden] {
+    display: none;
+}
+
+body.reel-open .reel-modal {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.4s ease-in-out, visibility 0s linear 0s;
+    transition: opacity 0.4s ease-in-out, visibility 0s linear 0s;
+}
+
+.reel-modal__stage {
+    width: 100%;
+    max-width: 1150px;
+    -webkit-transform: translateY(18px);
+    transform: translateY(18px);
+    -webkit-transition: transform 0.5s var(--ease-out);
+    transition: transform 0.5s var(--ease-out);
+}
+
+body.reel-open .reel-modal__stage {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.reel-modal__video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    background-color: var(--color-black);
+}
+
+/* Close X — same crossed-bar motif as the menu */
+.reel-modal__close {
+    position: absolute;
+    top: 22px;
+    right: 26px;
+    z-index: 2;
+    display: block;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+}
+
+.reel-modal__close span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 34px;
+    height: 2px;
+    margin: -1px 0 0 -17px;
+    background-color: var(--color-white);
+    -webkit-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.reel-modal__close span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.reel-modal__close span:nth-child(2) {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.reel-modal__close:hover span,
+.reel-modal__close:focus-visible span {
+    background-color: var(--color-red);
+}
+
+
+
+/*-- Pre-animation start states ---------------------------------------------
+   Mirrors the "from" values in general.js so elements are already parked when
+   the page first paints, instead of appearing and then jumping to their start.
+   Only applied while .anim-ready is on <html> — see the note in index.html.
+   ------------------------------------------------------------------------ */
+
+.anim-ready .hero__reel {
+    opacity: 0;
+}
+
+.anim-ready .js-reveal {
+    opacity: 0;
+    -webkit-transform: translateY(42px);
+    transform: translateY(42px);
+}
+
+.anim-ready .js-poster {
+    opacity: 0;
+    -webkit-transform: translateY(60px);
+    transform: translateY(60px);
+}
+
+.anim-ready .js-logo {
+    opacity: 0;
+    -webkit-transform: translateY(26px);
+    transform: translateY(26px);
+}
+
+.anim-ready .js-rule {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+}
+
+.anim-ready .js-slide-left {
+    opacity: 0;
+    -webkit-transform: translateX(-70px);
+    transform: translateX(-70px);
+}
+
+.anim-ready .js-slide-right {
+    opacity: 0;
+    -webkit-transform: translateX(70px);
+    transform: translateX(70px);
+}
+
+/* masked display lines sit below their own clip box — matches the 210% the
+   GSAP tweens start from, so there is no jump when they take over */
+.anim-ready .reveal-line > span {
+    -webkit-transform: translateY(210%);
+    transform: translateY(210%);
+}
+
+/* Intro + final CTA use fade-up on the line box, not the inner mask slide */
+.anim-ready .intro .reveal-line,
+.anim-ready .final-cta .reveal-line {
+    opacity: 0;
+    -webkit-transform: translateY(72px);
+    transform: translateY(72px);
+}
+
+.anim-ready .intro .reveal-line > span,
+.anim-ready .final-cta .reveal-line > span {
+    -webkit-transform: none;
+    transform: none;
+}
+
+/* display headings that rise without a mask */
+.anim-ready .js-rise > span:not(.reveal-line) {
+    opacity: 0;
+    -webkit-transform: translateY(28px);
+    transform: translateY(28px);
+}
+
+/* DARE. / CRAFT. / DELIVER. wait outside the left edge of the window */
+.anim-ready .js-stair {
+    -webkit-transform: translateX(-110vw);
+    transform: translateX(-110vw);
+}
+
+
+/* ==========================================================================
+   Desktop defaults (1025px+)
+   ========================================================================== */
+
+@media (min-width: 1025px) {
+
+.hero {
+        max-height: none;
+    }
+
+    .hero__reel {
+        left: auto;
+        right: 40px;
+        bottom: 80px;
+        gap: 16px;
+    }
+
+    .hero__reel-icon {
+        width: 17px;
+    }
+
+    .hero__reel-label {
+        font-size: var(--fontsize-reel-label-lg);
+        letter-spacing: var(--tracking-reel-label-lg);
+    }
+
+.intro {
+        min-height: auto;
+        padding: 240px 0 120px;
+        background-color: transparent;
+        background-image: none;
+    }
+
+    .intro__title {
+        text-align: left;
+        margin-bottom: 44px;
+        letter-spacing: var(--tracking-display);
+    }
+
+    .intro__title-line + .intro__title-line {
+        margin-top: 0;
+    }
+
+    .intro__copy p {
+        line-height: 1.21;
+    }
+
+    /* Staggered composition — second line indented */
+    .intro__title-line.js-line-b {
+        padding-left: 15.9%;
+    }
+
+    .intro__copy {
+        max-width: calc(100% - 16.2%);
+        margin-left: 16.2%;
+    }
+
+.intro__copy {
+        max-width: 880px;
+    }
+
+.intro {
+        padding: 300px 0 150px;
+    }
+
+    .intro__title {
+        margin-bottom: 54px;
+    }
+
+.parallax-band {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 0 var(--gutter);
+    }
+
+    .parallax-band__bg {
+        background-image: url('images/parallax-bg.webp');
+    }
+
+    .parallax-band__title {
+        text-align: left;
+        margin-left: 16.2%;
+        letter-spacing: 7px;
+    }
+
+    .parallax-band__line {
+        line-height: 70px;
+    }
+
+    .parallax-band__line + .parallax-band__line {
+        margin-top: 27px;
+    }
+
+.filmography {
+        padding-bottom: 0;
+    }
+
+    .filmography__panel {
+        width: calc(100% - 82px);
+        max-width: calc(var(--container-max) + 82px);
+        margin-left: auto;
+        margin-right: auto;
+        padding: 77px 0 110px;
+    }
+
+    .filmography__eyebrow {
+        max-width: none;
+        margin-bottom: 60px;
+        letter-spacing: var(--tracking-eyebrow);
+    }
+
+    .filmography__grid {
+        margin-bottom: 72px;
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 1rem;
+    }
+
+    /* Three columns until the 1200px container — six posters land 3×2 */
+    .filmography__grid .filmography__item {
+        width: 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+        margin-top: 25px;
+    }
+
+    .filmography__footer {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .filmography__copy {
+        max-width: 679px;
+        flex: 1 1 auto;
+    }
+
+    .filmography__action {
+        flex: 0 0 auto;
+        padding-top: 6px;
+    }
+
+/* Five equal columns — 5 × 216px + 4 × 30px gutters = 1200px container */
+    .filmography__grid .filmography__item {
+        width: 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+
+.services__word {
+        line-height: inherit;
+    }
+
+    .services__word + .services__word {
+        margin-top: 0;
+    }
+
+.services {
+        padding: 90px 0 150px;
+    }
+
+    .services__eyebrow {
+        max-width: none;
+    }
+
+    .services__words {
+        padding: 53px 0 80px;
+        text-align: left;
+        /* shrink-to-fit so the staircase sits centred as a block while the
+           individual steps keep their offsets */
+        width: -webkit-fit-content;
+        width: fit-content;
+        margin-left: 13%;
+        margin-right: auto;
+    }
+
+    .services__word:nth-child(2) {
+        padding-left: 37%;
+    }
+
+    .services__word:nth-child(3) {
+        padding-left: 68%;
+    }
+
+    .services__word {
+        line-height: 65px;
+        letter-spacing: 5px;
+        margin-bottom: 23px;
+    }
+
+    .services__word:last-child {
+        margin-bottom: 0;
+    }
+
+    .services__viewport {
+        padding-bottom: 70px;
+    }
+
+    .services__track {
+        gap: 30px;
+        padding: 0 40px;
+    }
+
+    .service-card {
+        width: 724px;
+    }
+
+    .service-card__label {
+        left: 30px;
+        bottom: 30px;
+    }
+
+    .services__footer {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .services__copy {
+        max-width: 686px;
+        flex: 1 1 auto;
+    }
+
+    .services__copy p {
+        line-height: 25px;
+    }
+
+    .services__action {
+        flex: 0 0 auto;
+        padding-top: 6px;
+    }
+
+section.stack-pin {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        min-height: 100vh;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    section.stack-pin > .container,
+    section.stack-pin > .angled-panel {
+        width: 100%;
+    }
+
+    section.stack-pin > .angled-panel {
+        width: calc(100% - 38px);
+    }
+
+    section.parallax-band.stack-pin {
+        justify-content: center;
+        align-items: center;
+    }
+
+.angled-panel {
+        width: calc(100% - 38px);
+        /* 45° cut — span equals depth. Sized to clear the ~122px header block
+           (logo sits ~124px wide from the left). Interpolates 1440 → 2048. */
+        --notch-span: clamp(92px, calc(3.2vw + 58px), 120px);
+        --notch-depth: var(--notch-span);
+        --notch-in: 20px;
+        --notch-out: calc(var(--notch-in) + var(--notch-span));
+        min-height: 100vh;
+        -webkit-clip-path: polygon(var(--notch-out) 0, 100% 0, 100% 100%, 0 100%,
+                                   0 var(--notch-depth), var(--notch-in) var(--notch-depth));
+        clip-path: polygon(var(--notch-out) 0, 100% 0, 100% 100%, 0 100%,
+                           0 var(--notch-depth), var(--notch-in) var(--notch-depth));
+    }
+
+    /* Cutout shifts right per stacked panel; --notch-in clears the 104px logo
+       plus its 20px left inset (124px) with a little breathing room. */
+    .our-team .angled-panel        { --notch-in: clamp(124px, calc(6.5vw + 40px),  150px); }
+    .top-studios .angled-panel     { --notch-in: clamp(162px, calc(8.4vw +  52px),  198px); }
+    .problem-solvers .angled-panel { --notch-in: clamp(200px, calc(10.2vw + 64px),  248px); }
+
+    /* matching gutter top and bottom, so the panel is inset on all four sides */
+    .our-team,
+    .top-studios,
+    .problem-solvers {
+        padding: 19px 0;
+    }
+
+.our-team__media img,
+    .problem-solvers__media img {
+        aspect-ratio: auto;
+    }
+
+.our-team .angled-panel {
+        padding: calc(var(--notch-depth) + var(--header-offset) + 24px) 0 56px;
+    }
+
+    .our-team__eyebrow {
+        text-align: left;
+        max-width: none;
+        margin: 0 0 10px;
+    }
+
+    .our-team__title {
+        text-align: left;
+        margin: 20px 0 36px;
+        padding-left: 78px;
+    }
+
+    .our-team__row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 68px;
+    }
+
+    .our-team__media {
+        flex: 0 0 690px;
+        max-width: 690px;
+        min-width: 0;
+    }
+
+    .our-team__media img {
+        display: block;
+        width: 100%;
+        height: 407px;
+        object-fit: cover;
+    }
+
+    .our-team__content {
+        flex: 0 1 411px;
+        max-width: 411px;
+        min-width: 0;
+    }
+
+    .our-team__content .subheading {
+        margin-bottom: 24px;
+    }
+
+.top-studios .angled-panel {
+        padding: calc(var(--notch-depth) + var(--header-offset) + 24px) 0 64px;
+    }
+
+    .top-studios__head {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .top-studios__eyebrow {
+        text-align: left;
+        max-width: none;
+        margin: 0 0 6px;
+    }
+
+    .top-studios__title {
+        text-align: left;
+        margin: 20px 0 0;
+        padding-left: 60px;
+        flex: 0 1 auto;
+        min-width: 0;
+    }
+
+    .top-studios__copy {
+        flex: 0 0 321px;
+        max-width: 321px;
+        padding-top: 26px;
+    }
+
+    .top-studios__rule {
+        margin: 36px 0 44px;
+    }
+
+    /* Figma lays the ten marks out as two rows of five, distributed
+       space-between across the full rule width — first flush left, last flush
+       right — each at its own natural size. The old 20%-wide columns with a
+       fixed 34px logo height left a gap at the right of each row and squashed
+       the wide marks, so the grid now sizes to the artwork instead. */
+    .studio-logos {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 24px;
+        row-gap: 66px;
+        margin-left: 0;
+        margin-right: 0;
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 0;
+    }
+
+    .studio-logos > .col {
+        flex: none;
+        width: auto;
+        max-width: none;
+        padding: 0;
+    }
+
+    .studio-logos__item img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+    }
+
+.problem-solvers__title span:last-child {
+        display: inline;
+        margin-top: 0;
+    }
+
+    .problem-solvers__title {
+        line-height: var(--lineheight-display);
+    }
+
+.problem-solvers .angled-panel {
+        padding: calc(var(--notch-depth) + var(--header-offset) + 24px) 0 56px;
+    }
+
+    .problem-solvers__eyebrow {
+        text-align: left;
+        max-width: none;
+        margin: 0 0 10px;
+    }
+
+    .problem-solvers__title {
+        text-align: left;
+        margin: 20px 0 36px;
+        padding-left: 72px;
+    }
+
+    /* Text block sits on the image's centre line, as on Our Team */
+    .problem-solvers__row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 68px;
+    }
+
+    .problem-solvers__media {
+        flex: 0 0 690px;
+        max-width: 690px;
+        min-width: 0;
+    }
+
+    .problem-solvers__media img {
+        display: block;
+        width: 100%;
+        height: 407px;
+        object-fit: cover;
+    }
+
+    .problem-solvers__content {
+        flex: 0 1 411px;
+        max-width: 411px;
+        min-width: 0;
+    }
+
+.our-team .angled-panel,
+    .top-studios .angled-panel,
+    .problem-solvers .angled-panel {
+        padding-top: calc(var(--notch-depth) + var(--header-offset) - 20px);
+        padding-bottom: 48px;
+    }
+
+    .our-team__title,
+    .problem-solvers__title {
+        margin-bottom: 38px;
+    }
+
+    .top-studios__rule {
+        margin: 28px 0 36px;
+    }
+
+.final-cta {
+        min-height: 949px;
+        padding: 140px 0;
+    }
+
+    .final-cta__bg {
+        background-image: url('images/final-cta.jpg');
+    }
+
+    .final-cta__eyebrow {
+        max-width: none;
+        letter-spacing: 8.4px;
+        margin-bottom: 18px;
+    }
+
+    .final-cta__title {
+        text-align: left;
+        line-height: 74px;
+        margin-bottom: 60px;
+    }
+
+    /* Staggered lines */
+    .final-cta__title > span:first-child {
+        padding-left: 11.7%;
+    }
+
+    .final-cta__title > span:last-child {
+        padding-left: 55.3%;
+    }
+
+.site-footer {
+        padding: 35px 40px 20px;
+        background-image: url('images/footer-bg.jpg');
+    }
+
+    .site-footer__top.c-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 30px;
+        padding-bottom: 40px;
+        grid-template-columns: none;
+        column-gap: normal;
+        row-gap: normal;
+    }
+
+    .site-footer__brand,
+    .site-footer__nav:first-of-type,
+    .site-footer__nav:last-of-type,
+    .site-footer__updates,
+    .site-footer__social {
+        grid-column: auto;
+        flex: 0 0 auto;
+    }
+
+    .site-footer__logo {
+        width: 104px;
+    }
+
+    .site-footer__nav {
+        display: block;
+        padding-left: 0;
+    }
+
+    .site-footer__social .site-footer__label {
+        margin-bottom: 13px;
+    }
+
+    .site-footer__bottom {
+        margin-top: 20px;
+        padding-top: 18px;
+    }
+
+.reel-modal {
+        padding: 80px 40px;
+    }
+
+    .reel-modal__close {
+        top: 30px;
+        right: 40px;
+    }
+
+.anim-ready .js-slide-left {
+        -webkit-transform: translateX(-220px);
+        transform: translateX(-220px);
+    }
+
+    .anim-ready .js-slide-right {
+        -webkit-transform: translateX(220px);
+        transform: translateX(220px);
+        margin-left: 15%;
+    }
+
+    .anim-ready .js-rise > span:not(.reveal-line) {
+        -webkit-transform: translateY(46px);
+        transform: translateY(46px);
+    }
+
+    .anim-ready .intro .reveal-line,
+    .anim-ready .final-cta .reveal-line {
+        -webkit-transform: translateY(110px);
+        transform: translateY(110px);
+    }
+
+} /* end @media (min-width: 1025px) */
+
+
+/* ===== Responsive overrides (max-width scale-down) ===== */
+
+/* ==========================================================================
+   Responsive — max-width breakpoints only
+   1200px | 1024px | 991px | 768px | 640px
+   Desktop layout is the style.css default; these queries scale down.
+   Load after default.css, menu.css, and style.css.
+   ========================================================================== */
+
+/*-- ≤1200px — narrow desktop / typography step-down -----------------------*/
+
+@media (max-width: 1360px) {
+    :root {
+        --fontsize-display: 64px;
+        --fontsize-eyebrow: 17px;
+        --fontsize-lead: 22px;
+        --fontsize-body: 16px;
+        --fontsize-subheading: 18px;
+        --fontsize-card-label: 14px;
+        --fontsize-footer-link: 15px;
+        --fontsize-footer-label: 10px;
+        --fontsize-micro: 12px;
+
+        --lineheight-display: 62px;
+        --lineheight-body: 24px;
+
+        --tracking-display: 3px;
+        --tracking-eyebrow: 8px;
+        --tracking-subheading: 3px;
+        --tracking-card-label: 4.5px;
+        --header-offset: 122px;
+    }
+    .container {
+        max-width: 1170px;
+    }
+    .intro {
+        padding: 240px 0 120px;
+    }
+
+    .intro__title {
+        margin-bottom: 44px;
+    }
+
+    .intro__copy {
+        max-width: calc(100% - 16.2%);
+    }
+
+
+
+    .our-team__row,
+    .problem-solvers__row {
+        gap: 40px;
+    }
+
+    .our-team__media,
+    .problem-solvers__media {
+        flex: 1 1 52%;
+        max-width: 52%;
+    }
+
+    .our-team__media img,
+    .problem-solvers__media img {
+        height: auto;
+        aspect-ratio: 690 / 407;
+    }
+
+    .our-team__content,
+    .problem-solvers__content {
+        flex: 1 1 38%;
+        max-width: 38%;
+    }
+
+    /* Pinned panels — content-height panel centred in the viewport */
+        section.stack-pin {
+            justify-content: center;
+        }
+    
+        .angled-panel {
+            min-height: 100vh;
+        }
+    
+        /* Services staircase — keep all three words on screen */
+        .services__words {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 100%;
+            padding-left: var(--gutter);
+            padding-right: var(--gutter);
+            box-sizing: border-box;
+        }
+    
+        .services__word:nth-child(2) {
+            padding-left: 22%;
+        }
+    
+        .services__word:nth-child(3) {
+            padding-left: 42%;
+        }
+    
+        .services__word {
+            line-height: 52px;
+            letter-spacing: 3px;
+        }
+    
+        .service-card {
+            width: 480px;
+        }
+    
+        .services__track {
+            gap: 20px;
+            padding: 0 var(--gutter);
+        }
+    
+        /* Top studios — title + copy stay side by side */
+        .top-studios__head {
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            gap: 24px;
+        }
+    
+        .top-studios__title {
+            flex: 1 1 52%;
+            padding-left: 32px;
+        }
+    
+        .top-studios__copy {
+            flex: 0 1 42%;
+            max-width: 42%;
+            padding-top: 26px;
+        }
+    
+        /* Footer — single row, tighter gaps */
+        .site-footer__top {
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+        }
+    
+        .site-footer__nav {
+            gap: 32px;
+            padding-left: 0;
+            min-width: 0;
+        }
+    
+        .site-footer__updates,
+        .site-footer__social {
+            flex: 0 0 auto;
+        }
+    
+        .filmography__footer {
+            gap: 28px;
+        }
+    
+        .filmography__copy {
+            max-width: none;
+        }
+    
+        .services__footer {
+            gap: 28px;
+        }
+    
+        .services__copy {
+            max-width: none;
+        }
+    
+    /* folded from @media (min-width: 992px) and (max-width: 1439px) and (min-height: 861px) and (max-height: 1060px) */
+    :root {
+            --fontsize-display: 80px;
+            --lineheight-display: 76px;
+        }
+    
+    /* folded from @media (min-width: 992px) and (max-width: 1439px) and (max-height: 860px) */
+    :root {
+            --fontsize-display: 64px;
+            --lineheight-display: 62px;
+            --fontsize-lead: 22px;
+            --fontsize-eyebrow: 17px;
+            --tracking-eyebrow: 8px;
+        }
+    
+    /* folded from @media (min-width: 1025px) and (min-height: 560px) */
+    section.stack-pin {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    
+        section.stack-pin > .container,
+        section.stack-pin > .angled-panel {
+            width: 100%;
+        }
+        /* NOTE: do not be tempted to anchor these with `bottom: 0` for viewports
+           shorter than the panel. A sticky element with `bottom` set is pulled UP
+           into the viewport while its natural position is still below it, so every
+           pinned section stacks on top of the hero at scroll 0. `top: 0` is the
+           only correct anchor here; where a panel is taller than the viewport its
+           lower part stays below the fold, which is what the prototype does too. */
+    
+   
+    
+        /* Parallax band title should stay vertically centred while pinned */
+        section.parallax-band.stack-pin {
+            justify-content: center;
+            align-items: center;
+        }
+    
+    /* folded from @media (min-width: 1025px) and (max-width: 1439px) and (max-height: 860px) */
+    /* Notch clearance only — stack-pin already sits below the fixed header */
+        section.stack-pin {
+            justify-content: center;
+        }
+    
+      
+    
+        .our-team .angled-panel,
+        .problem-solvers .angled-panel,
+        .top-studios .angled-panel {
+            padding: calc(var(--notch-depth) + var(--header-offset) + 12px) 0 20px;
+        }
+    
+        /* the 19px gutter costs 38px of a very short viewport */
+        .our-team,
+        .top-studios,
+        .problem-solvers {
+            padding: 12px 0;
+        }
+    
+        .our-team__title,
+        .problem-solvers__title {
+            margin: 14px 0 26px;
+        }
+    
+        .top-studios__title {
+            margin: 14px 0 0;
+        }
+    
+        .our-team__row,
+        .problem-solvers__row {
+            align-items: center;
+            gap: 32px;
+        }
+    
+        .our-team__media,
+        .problem-solvers__media {
+            flex: 1 1 52%;
+            max-width: 52%;
+        }
+    
+        .our-team__media img,
+        .problem-solvers__media img {
+            height: auto;
+            aspect-ratio: 690 / 407;
+            object-fit: cover;
+        }
+    
+        .our-team__btn,
+        .problem-solvers__btn {
+            margin-top: 22px;
+        }
+    
+        .top-studios__rule {
+            margin: 30px 0 32px;
+        }
+    
+        .studio-logos {
+            --bs-gutter-y: 26px;
+            row-gap: 40px;
+        }
+    
+        .final-cta {
+            min-height: 100vh;
+            padding: 90px 0;
+        }
+    
+        .final-cta__title {
+            margin-bottom: 34px;
+        }
+    
+    /* folded from @media (min-width: 1025px) and (max-width: 1439px) and (min-height: 861px) and (max-height: 1060px) */
+    .our-team .angled-panel,
+        .problem-solvers .angled-panel,
+        .top-studios .angled-panel {
+            padding: calc(var(--notch-depth)  + 16px) 0 40px;
+        }
+    
+        .our-team__title,
+        .problem-solvers__title {
+            margin: 18px 0 40px;
+        }
+    
+        .top-studios__title {
+            margin: 18px 0 0;
+        }
+    
+        .our-team__media img,
+        .problem-solvers__media img {
+            height: 330px;
+            object-fit: cover;
+        }
+    
+        .top-studios__rule {
+            margin: 44px 0 48px;
+        }
+    
+        .studio-logos {
+            --bs-gutter-y: 40px;
+            row-gap: 52px;
+        }
+    
+        .final-cta {
+            min-height: 100vh;
+        }
+}
+
+/*-- ≤1024px — mobile / tablet layout  ----------------------*/
+.parallax-band__bg--mobile
+{
+    display: none;
+}
+.parallax-band__bg--desktop
+{
+    display: block;
+}
+@media (max-width: 1024px) {
+    .parallax-band__bg--mobile
+    {
+        display: block;
+    }
+    .parallax-band__bg--desktop
+    {
+        display: none;
+    }
+    :root {
+        --fontsize-display: 34px;
+        --fontsize-eyebrow: 14px;
+        --fontsize-lead: 18px;
+        --fontsize-body: 14px;
+        --fontsize-subheading: 14px;
+        --fontsize-card-label: 12px;
+        --fontsize-footer-link: 14px;
+        --fontsize-footer-label: 10px;
+        --fontsize-micro: 12px;
+
+        --lineheight-display: 45px;
+        --lineheight-body: 20px;
+
+        --tracking-display: 1.7px;
+        --tracking-eyebrow: 6.86px;
+        --tracking-subheading: 2.1px;
+        --tracking-card-label: 3.6px;
+        --header-offset: 96px;
+    }
+
+    /*!
+    Project: Cause and FX
+    File: style.css — all page/section styles (mobile-first)
+    */
+    
+    /*-===== Homepage style start here =======*/
+    
+    
+    /*-- Hero start --*/
+    
+    /* Mammut-style stage: hero pins while video fades to solid red */
+    .hero-stage {
+        position: relative;
+        z-index: 1;
+        background-color: var(--color-red);
+    }
+    
+    .hero {
+        position: relative;
+        height: 100vh;
+        height: 100svh;
+        min-height: 560px;
+        max-height: 887px;
+        overflow: hidden;
+        background-color: var(--color-red);
+        z-index: 1;
+    }
+    
+    .hero__media-wrap {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        z-index: 2;
+        will-change: transform, opacity;
+    }
+
+    .hero__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: 1;
+        background-color: var(--color-red);
+        pointer-events: none;
+    }
+    
+    .hero__media {
+        display: block;
+        width: 100%;
+        height: 110%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .hero__reel {
+        position: absolute;
+        left: 42px;
+        bottom: 47px;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .hero__reel-icon {
+        display: block;
+        width: 19px;
+        height: auto;
+        flex: 0 0 auto;
+    }
+    
+    .hero__reel-label {
+        font-size: var(--fontsize-reel-label);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: var(--tracking-reel-label);
+        text-transform: uppercase;
+        color: var(--color-white);
+    }
+    
+    .hero__reel:hover {
+        opacity: 1;
+    }
+    
+    .hero__reel:hover .hero__reel-label {
+        opacity: 0.75;
+    }
+    
+    
+    
+    /*-- Hero end ---*/
+    
+    
+    /*-- Intro start --*/
+    
+    /* Transparent — red from pinned hero behind, not a scrolling gradient */
+    .intro {
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+        padding: 180px 0 80px;
+        background-color: transparent;
+        background-image: none;
+    }
+    
+    .intro__title {
+        text-align: center;
+        margin-bottom: 34px;
+        letter-spacing: 1.7px;
+    }
+    
+    .intro__title-line {
+        display: block;
+    }
+    
+    .intro__title-line + .intro__title-line {
+        margin-top: -2px;
+    }
+    
+    .intro__copy {
+        text-align: left;
+    }
+    
+    .intro__copy p {
+        line-height: normal;
+    }
+    
+    
+    
+    
+    
+    
+    
+    /*-- Intro end ---*/
+    
+    
+    /*-- Parallax band start --*/
+    section.parallax-band.stack-pin {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        min-height: 100vh;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    section.parallax-band.stack-pin > .container,
+    section.parallax-band.stack-pin > .angled-panel {
+        width: 100%;
+    }
+    .parallax-band {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 873px;
+        min-height: max(873px, 85svh);
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .parallax-band__bg {
+        position: absolute;
+        inset: -12% 0;
+        background-size: cover;
+        background-position: center;
+        will-change: transform;
+        
+    }
+    
+    .parallax-band__title {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding: 0 var(--gutter);
+        text-align: center;
+        margin-left: 0;
+        letter-spacing: 2.38px;
+    }
+    
+    .parallax-band__line {
+        display: block;
+        line-height: normal;
+    }
+    
+    .parallax-band__line + .parallax-band__line {
+        margin-top: 6px;
+    }
+
+    section.parallax-band.stack-pin.is-unpinned {
+        position: relative;
+    }
+    
+    
+    
+    /*-- Parallax band end ---*/
+    
+    
+    /*-- Filmography start --*/
+    .our-team
+    {
+        background-color: transparent;
+    }
+    .our-team .angled-panel,
+    .problem-solvers .angled-panel
+    {
+        background-image: url('images/mobile-pattern.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .our-team__title, .problem-solvers__title {
+        margin: 7px 0 30px;
+    }
+    .filmography {
+        position: relative;
+        z-index: 4;
+        background-image: -webkit-linear-gradient(top, rgba(195, 22, 28, 0) 0%, rgba(195, 22, 28, 0.04) 6%, rgba(195, 22, 28, 0.09) 12%, rgba(195, 22, 28, 0.15) 18%, rgba(195, 22, 28, 0.22) 24%, rgba(195, 22, 28, 0.30) 30%, rgba(195, 22, 28, 0.38) 36%, rgba(195, 22, 28, 0.46) 42%, rgba(195, 22, 28, 0.54) 48%, rgba(195, 22, 28, 0.62) 54%, rgba(195, 22, 28, 0.69) 60%, rgba(195, 22, 28, 0.76) 66%, rgba(195, 22, 28, 0.82) 72%, rgba(195, 22, 28, 0.87) 78%, rgba(195, 22, 28, 0.91) 84%, rgba(195, 22, 28, 0.95) 90%, rgba(195, 22, 28, 0.98) 96%, var(--color-red) 100%);
+        background-image: linear-gradient(180deg, rgba(195, 22, 28, 0) 0%, rgba(195, 22, 28, 0.04) 6%, rgba(195, 22, 28, 0.09) 12%, rgba(195, 22, 28, 0.15) 18%, rgba(195, 22, 28, 0.22) 24%, rgba(195, 22, 28, 0.30) 30%, rgba(195, 22, 28, 0.38) 36%, rgba(195, 22, 28, 0.46) 42%, rgba(195, 22, 28, 0.54) 48%, rgba(195, 22, 28, 0.62) 54%, rgba(195, 22, 28, 0.69) 60%, rgba(195, 22, 28, 0.76) 66%, rgba(195, 22, 28, 0.82) 72%, rgba(195, 22, 28, 0.87) 78%, rgba(195, 22, 28, 0.91) 84%, rgba(195, 22, 28, 0.95) 90%, rgba(195, 22, 28, 0.98) 96%, var(--color-red) 100%);
+    }
+    
+    .filmography__panel {
+        /* clears the desktop calc(100% - 82px) so the panel keeps an even
+           20px gutter either side instead of losing 62px off the right */
+        width: auto;
+        max-width: none;
+        background-color: rgba(0, 0, 0, 0.9);
+        margin: 0 var(--gutter);
+        padding: 52px 0 60px;
+    }
+    
+    .filmography__eyebrow {
+        text-align: center;
+        max-width: 268px;
+        margin: 0 auto 40px;
+        letter-spacing: 7px;
+    }
+    
+    .filmography__grid {
+        list-style: none;
+        padding: 0;
+        /* keep Bootstrap's negative row margins — zeroing them pulls the posters
+           inward by half a gutter, so the grid stops spanning the container */
+        margin: 0 calc(-0.5 * var(--bs-gutter-x)) 44px;
+        justify-content: center;
+        overflow: visible;
+        --bs-gutter-x: 14px;
+        --bs-gutter-y: 14px;
+    }
+    
+    .filmography__item {
+        display: flex;
+        position: relative;
+        z-index: 1;
+        overflow: visible;
+    }
+    
+    .poster {
+        position: relative;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-transition: -webkit-transform 0.8s var(--ease-out), transform 0.8s var(--ease-out), z-index 0s 0.8s;
+        transition: transform 0.8s var(--ease-out), z-index 0s 0.8s;
+    }
+    
+    .poster img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 155 / 233;
+        object-fit: cover;
+    }
+    
+    .poster__overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.75);
+        opacity: 0;
+        -webkit-transition: opacity 0.6s ease-in-out;
+        transition: opacity 0.6s ease-in-out;
+    }
+    
+    .poster__label {
+        font-family: var(--font-mono);
+        font-size: var(--fontsize-card-label);
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: var(--tracking-card-label);
+        text-transform: uppercase;
+        color: var(--color-white);
+    }
+    
+    .poster:hover,
+    .poster:focus-visible {
+        overflow: visible;
+        z-index: 5;
+        -webkit-transition: -webkit-transform 0.8s var(--ease-out), transform 0.8s var(--ease-out), z-index 0s 0s;
+        transition: transform 0.8s var(--ease-out), z-index 0s 0s;
+        -webkit-transform: scale(1.12);
+        transform: scale(1.12);
+    }
+    
+    .poster:hover .poster__overlay,
+    .poster:focus-visible .poster__overlay {
+        opacity: 1;
+    }
+    
+    .filmography__footer {
+        flex-direction: column;
+        gap: 34px;
+    }
+    
+    .filmography__action .btn {
+        min-width: 216px;
+    }
+    
+    
+    
+    
+    
+    /*-- Filmography end ---*/
+    
+    
+    /*-- Services start --*/
+    
+    .services {
+        position: relative;
+        z-index: 5;
+        padding: 70px 0 60px;
+        overflow: hidden;
+        background-image: -webkit-linear-gradient(top, var(--color-red) 49.5%, var(--color-red-dark) 100%);
+        background-image: linear-gradient(180deg, var(--color-red) 49.5%, var(--color-red-dark) 100%);
+    }
+    
+    .services__eyebrow {
+        text-align: center;
+        max-width: 268px;
+        margin: 0 auto;
+    }
+    
+    /* No overflow clip here — the words fly in from off the left of the window,
+       and this box is only as wide as the staircase. .services clips instead, so
+       nothing spills into a horizontal scrollbar. */
+    .services__words {
+        position: relative;
+        padding: 26px 0 40px;
+        text-align: center;
+    }
+    
+    .services__word {
+        display: block;
+        white-space: nowrap;
+        will-change: transform;
+        line-height: 45px;
+    }
+    
+    .services__word + .services__word {
+        margin-top: -7px;
+    }
+    
+    /* Grab-to-scroll: pan-y keeps vertical page scrolling working on touch while
+       horizontal drags belong to the strip. */
+    .services__viewport {
+        cursor: grab;
+        touch-action: pan-y;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    
+    .services__viewport.is-dragging {
+        cursor: grabbing;
+    }
+    
+    .services__viewport.is-dragging .service-card__link {
+        pointer-events: none;
+    }
+    
+    .service-card__link {
+        display: block;
+        width: 100%;
+        line-height: 0;
+        -webkit-user-drag: none;
+    }
+    
+    .service-card__link:hover {
+        opacity: 1;
+    }
+    
+    .service-card__link img,
+    .service-card__link video {
+        pointer-events: none;
+    }
+    
+    .services__viewport {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 32px;
+    }
+    
+    .services__track {
+        display: flex;
+        align-items: stretch;
+        gap: 13px;
+        list-style: none;
+        padding: 0 var(--gutter);
+        margin: 0;
+        width: max-content;
+        will-change: transform;
+    }
+    
+    .service-card {
+        position: relative;
+        flex: 0 0 auto;
+        width: 327px;
+        border-radius: 20px;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    /* <video> with a poster — shows the still until the client adds a source */
+    /* <video> with a poster — shows the still until the client adds a source */
+    .service-card__media {
+        display: block;
+        width: 100%;
+        aspect-ratio: 850 / 541;
+        object-fit: cover;
+        background-color: var(--color-red-dark);
+    }
+    
+    .service-card::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 65.87%, rgba(0, 0, 0, 0.6) 100%);
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 65.87%, rgba(0, 0, 0, 0.6) 100%);
+        pointer-events: none;
+    }
+    
+    .service-card__label {
+        position: absolute;
+        left: 22px;
+        bottom: 22px;
+        z-index: 2;
+        font-size: var(--fontsize-card-label);
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: var(--tracking-card-label);
+        text-transform: uppercase;
+        color: var(--color-white);
+    }
+    
+    .services__footer {
+        flex-direction: column;
+        gap: 34px;
+    }
+    
+    .services__action .btn {
+        min-width: 223px;
+    }
+    
+    
+    
+    /*-- Services end ---*/
+    
+    
+    /*-- Stacked pin --------------------------------------------------------
+       In the prototype each of these sections holds still at the top of the
+       viewport while the NEXT section slides up over it, like a stack of cards.
+       Sticky siblings give exactly that: each one pins at top:0 and is then
+       covered by the following (opaque, higher z-index) section.
+    
+       Only enabled where there is room for a full viewport-height panel —
+       below that the sections simply scroll, which is the safe fallback.
+       Responsive rules: merged in style.css below
+       ---------------------------------------------------------------------- */
+    
+    
+    /*-- Angled panel -------------------------------------------------------
+       These sections are not full-bleed: an inset panel (~19px from
+       each side) carries the colour and the notched top-left corner, and the
+       gutter around it lets the section — or the pinned section behind it —
+       show through. The notch is a 45 degree cut, 72px across and 73px deep;
+       its position differs per section in the exported shapes.
+       ---------------------------------------------------------------------- */
+    
+    .angled-panel {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        min-height: auto;
+    }
+    
+    
+    
+    /*-- Our team start --*/
+    
+    /* The dark red that sits BEHIND the panel and shows through the gutter */
+    .our-team {
+        position: relative;
+        z-index: 6;
+        overflow: hidden;
+    }
+    
+    .our-team .angled-panel {
+        padding: 78px 0 150px;
+        background-color: var(--color-red);
+        /* The embossed X motif, plus the fade toward #2d0203 that sits
+           over its lower half in the design. The artwork's own notched corner has
+           been filled in — the corner comes from .angled-panel's clip-path, so the
+           two cannot drift out of alignment as the panel resizes. */
+
+        /* 100% auto, not cover: at the panel's 1402px the artwork lands at
+           1402x991 at the panel width, so the X motif keeps its
+           designed scale instead of being cropped to the panel's aspect. */
+        background-size: auto, 100% auto;
+        background-position: center, center top;
+        background-repeat: no-repeat, no-repeat;
+    }
+    
+    .our-team .container {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .our-team__eyebrow {
+        text-align: center;
+        max-width: 268px;
+        margin: 0 auto 8px;
+    }
+    
+    .our-team__title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .our-team__row {
+        flex-direction: column;
+    }
+    .our-team__row, .problem-solvers__row
+    {
+        gap: 0;
+    }
+    .our-team__media, .problem-solvers__media
+    {
+        margin-bottom: 23px;
+    }
+    .our-team__media img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 353 / 208;
+        object-fit: cover;
+    }
+    
+    .our-team__content .subheading {
+        margin-bottom: 16px;
+    }
+    
+    .our-team__btn {
+        margin-top: 34px;
+        min-width: 230px;
+    }
+    
+    
+    
+    
+    
+    /*-- Our team end ---*/
+    
+    
+    /*-- Top studios start --*/
+    
+    /* Transparent section — the gutter reveals the pinned section behind */
+    .top-studios {
+        position: relative;
+        z-index: 7;
+        overflow: hidden;
+    }
+    
+    .top-studios .angled-panel {
+        padding: 78px 0 150px;
+        background-color: var(--color-black);
+    }
+    
+    
+    .top-studios__eyebrow {
+        text-align: center;
+        max-width: 268px;
+        margin: 0 auto 8px;
+    }
+    
+    .top-studios__title {
+        text-align: center;
+        margin-bottom: 26px;
+    }
+    
+    .top-studios__head {
+        flex-direction: column;
+    }
+    
+    .top-studios__rule {
+        display: block;
+        width: 100%;
+        height: 1px;
+        margin:30px 0 20px;
+        background-color: var(--color-red);
+        -webkit-transform-origin: left center;
+        transform-origin: left center;
+    }
+    
+    /* back to the two-up Bootstrap row — the five-column grid is desktop only */
+    .studio-logos {
+        display: flex;
+        grid-template-columns: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 42px;
+    }
+    
+    .studio-logos > .col {
+        flex: 0 0 50%;
+        width: 50%;
+        max-width: 50%;
+    }
+    
+    .studio-logos__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .studio-logos__item img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    
+    
+    
+    /*-- Top studios end ---*/
+    
+    
+    /*-- Problem solvers start --*/
+    
+    .problem-solvers {
+        position: relative;
+        z-index: 8;
+        overflow: hidden;
+    }
+    
+    .problem-solvers .angled-panel {
+        padding: 78px 0 129px;
+        background-color: var(--color-red);
+    }
+    
+    .problem-solvers__eyebrow {
+        text-align: center;
+        max-width: 268px;
+        margin: 0 auto 8px;
+    }
+    
+    .problem-solvers__title {
+        text-align: center;
+        margin-bottom: 30px;
+        line-height: 45px;
+    }
+    .top-studios__title {
+        margin-bottom: 0;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .problem-solvers__title span:last-child {
+        display: block;
+        margin-top: -12px;
+    }
+    
+    .problem-solvers__row {
+        flex-direction: column;
+    }
+    
+    .problem-solvers__media img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 353 / 209;
+        object-fit: cover;
+    }
+    
+    .problem-solvers__btn {
+        margin-top: 34px;
+        min-width: 223px;
+    }
+    
+    
+    
+    
+    
+    
+    
+    /*-- Problem solvers end ---*/
+    
+    
+    /*-- Final CTA start --*/
+    
+    .final-cta {
+        position: relative;
+        z-index: 9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 937px;
+        padding: 120px 0 100px;
+        overflow: hidden;
+    }
+    section.parallax-band.stack-pin.is-unpinned {
+        position: relative;
+    }
+    .final-cta__bg {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        will-change: transform;
+        background-size: cover;
+        background-position: 36%;
+        will-change: transform;
+        transform: none !important;
+        border-radius: 0 !important;
+        margin-left: 0;
+    }
+    .our-team__btn, .problem-solvers__btn {
+        margin:40px  auto 0;
+        text-align: center;
+        display: block;
+        width: 230px;
+    }
+    .final-cta__inner {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        margin-top: 54%;
+    }
+    
+    .final-cta__eyebrow {
+        max-width: 353px;
+        margin: 0 auto 6px;
+    }
+    
+    .final-cta__title {
+        margin-bottom: 44px;
+    }
+    
+    .final-cta__title > span {
+        display: block;
+    }
+    
+    .final-cta__action .btn {
+        min-width: 223px;
+    }
+    
+    
+    
+    /*-- Final CTA end ---*/
+    
+    
+    /*======= Homepage style end =======*/
+    
+    
+    /*-- Site footer start --*/
+    
+    .site-footer {
+        position: relative;
+        z-index: 10;
+        overflow: hidden;
+        padding: 40px var(--gutter) 20px;
+        background-color: var(--color-red);
+        background-image: url('images/footer-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .site-footer__top.c-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 95px;
+        row-gap: 40px;
+        flex-direction: unset;
+        flex-wrap: unset;
+    }
+    
+    .site-footer__brand {
+        grid-column: 1 / -1;
+    }
+    
+    .site-footer__nav:first-of-type {
+        grid-column: 1;
+    }
+    
+    .site-footer__nav:last-of-type {
+        grid-column: 2;
+    }
+    
+    .site-footer__updates,
+    .site-footer__social {
+        grid-column: 1 / -1;
+    }
+    
+    .site-footer__logo {
+        display: block;
+        width: 94px;
+        line-height: 0;
+    }
+    
+    .site-footer__logo img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    
+    .site-footer__nav {
+        display: block;
+    }
+    
+    .site-footer__links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .site-footer__links li {
+        margin-bottom: 7px;
+    }
+    
+    .site-footer__links li:last-child {
+        margin-bottom: 0;
+    }
+    
+    .site-footer__links a {
+        font-size: var(--fontsize-footer-link);
+        font-weight: 400;
+        line-height: 25px;
+        color: var(--color-white);
+        text-transform: capitalize;
+    }
+    
+    .site-footer__label {
+        display: block;
+        margin-bottom: 13px;
+        font-size: var(--fontsize-footer-label);
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: var(--tracking-footer-label);
+        text-transform: uppercase;
+        color: var(--color-white);
+    }
+    
+    .site-footer__social .site-footer__label {
+        margin-bottom: 11px;
+    }
+    
+    .site-footer__subscribe {
+        font-size: var(--fontsize-footer-link);
+        font-weight: 400;
+        line-height: 1.4;
+        color: var(--color-white);
+        text-decoration: underline;
+        text-underline-offset: var(--text-underline-offset);
+    }
+    
+    .site-footer__bottom {
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 40px;
+        padding-top: 7px;
+        border-top: 1px solid var(--color-white);
+    }
+    
+    .site-footer__copyright p,
+    .site-footer__terms {
+        margin: 0;
+        font-size: var(--fontsize-micro);
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: var(--tracking-copyright);
+        color: var(--color-white);
+    }
+    
+    .site-footer__terms {
+        text-decoration: underline;
+        text-underline-offset: var(--text-underline-offset);
+        text-align: right;
+    }
+    
+    
+    
+    /* Narrow desktop — 1025px layout before the 1240px container cap */
+    
+    
+    /*-- Site footer end ---*/
+    
+    
+    /*-- Scroll-animation base states --*/
+    
+    .js-reveal,
+    .js-poster,
+    .js-logo {
+        will-change: transform, opacity;
+    }
+    
+    /* Note: no hidden-by-default states live in CSS — GSAP sets the "from"
+       states at runtime, so the page degrades to fully visible without JS. */
+    
+    
+    
+    
+    /*-- Short desktop viewports ------------------------------------------------
+       Panels taller than the viewport cannot pin — sticky would hold the top and
+       the rest would never be reachable. At these heights the pinned sections trim
+       their padding and cap their media so each one fits inside 100vh.
+       ------------------------------------------------------------------------ */
+    
+    
+    
+    
+    /*-- Mid-height desktop viewports -------------------------------------------
+       Between these heights the full-size panel (about 1060px) still will not fit
+       in 100vh, but there is more room than the short tier assumes.
+       ------------------------------------------------------------------------ */
+    
+    
+    
+    /*-- Show reel overlay ------------------------------------------------------
+       Show reel overlay: 1440 x 886 on solid #000, close X top-right,
+       player centred. The design mocks a Vimeo embed; this uses a native <video>
+       so it works without an account — swap in the iframe when the reel is ready.
+       ------------------------------------------------------------------------ */
+    
+    .reel-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 1200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 70px 20px;
+        background-color: var(--color-black);
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s;
+        transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s;
+    }
+    
+    .reel-modal[hidden] {
+        display: none;
+    }
+    
+    body.reel-open .reel-modal {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transition: opacity 0.4s ease-in-out, visibility 0s linear 0s;
+        transition: opacity 0.4s ease-in-out, visibility 0s linear 0s;
+    }
+    
+    .reel-modal__stage {
+        width: 100%;
+        max-width: 1150px;
+        -webkit-transform: translateY(18px);
+        transform: translateY(18px);
+        -webkit-transition: transform 0.5s var(--ease-out);
+        transition: transform 0.5s var(--ease-out);
+    }
+    
+    body.reel-open .reel-modal__stage {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    
+    .reel-modal__video {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border: 0;
+        background-color: var(--color-black);
+    }
+    
+    /* Close X — same crossed-bar motif as the menu */
+    .reel-modal__close {
+        position: absolute;
+        top: 22px;
+        right: 26px;
+        z-index: 2;
+        display: block;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+    }
+    
+    .reel-modal__close span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 34px;
+        height: 2px;
+        margin: -1px 0 0 -17px;
+        background-color: var(--color-white);
+        -webkit-transition: background-color 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
+    }
+    
+    .reel-modal__close span:nth-child(1) {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    
+    .reel-modal__close span:nth-child(2) {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    
+    .reel-modal__close:hover span,
+    .reel-modal__close:focus-visible span {
+        background-color: var(--color-red);
+    }
+    
+    
+    
+    /*-- Pre-animation start states ---------------------------------------------
+       Mirrors the "from" values in general.js so elements are already parked when
+       the page first paints, instead of appearing and then jumping to their start.
+       Only applied while .anim-ready is on <html> — see the note in index.html.
+       ------------------------------------------------------------------------ */
+    
+    .anim-ready .hero__reel {
+        opacity: 0;
+    }
+    
+    .anim-ready .js-reveal {
+        opacity: 0;
+        -webkit-transform: translateY(42px);
+        transform: translateY(42px);
+    }
+    
+    .anim-ready .js-poster {
+        opacity: 0;
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px);
+    }
+    
+    .anim-ready .js-logo {
+        opacity: 0;
+        -webkit-transform: translateY(26px);
+        transform: translateY(26px);
+    }
+    
+    .anim-ready .js-rule {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+    }
+    
+    .anim-ready .js-slide-left {
+        opacity: 0;
+        -webkit-transform: translateX(-70px);
+        transform: translateX(-70px);
+    }
+    
+    .anim-ready .js-slide-right {
+        opacity: 0;
+        -webkit-transform: translateX(70px);
+        transform: translateX(70px);
+    }
+    
+    /* masked display lines sit below their own clip box — matches the 210% the
+       GSAP tweens start from, so there is no jump when they take over */
+    .anim-ready .reveal-line > span {
+        -webkit-transform: translateY(210%);
+        transform: translateY(210%);
+    }
+    
+    /* Intro + final CTA use fade-up on the line box, not the inner mask slide */
+    .anim-ready .intro .reveal-line,
+    .anim-ready .final-cta .reveal-line {
+        opacity: 0;
+        -webkit-transform: translateY(72px);
+        transform: translateY(72px);
+    }
+    
+    .anim-ready .intro .reveal-line > span,
+    .anim-ready .final-cta .reveal-line > span {
+        -webkit-transform: none;
+        transform: none;
+    }
+    
+    /* display headings that rise without a mask */
+    .anim-ready .js-rise > span:not(.reveal-line) {
+        opacity: 0;
+        -webkit-transform: translateY(28px);
+        transform: translateY(28px);
+    }
+    
+    /* DARE. / CRAFT. / DELIVER. wait outside the left edge of the window */
+    .anim-ready .js-stair {
+        -webkit-transform: translateX(-110vw);
+        transform: translateX(-110vw);
+    }
+
+    /* Disable desktop stack-pin below desktop breakpoint */
+    section.stack-pin {
+        position: relative;
+        min-height: auto;
+        display: block;
+        justify-content: flex-start;
+    }
+
+
+
+    section.parallax-band.stack-pin {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 873px;
+        min-height: max(873px, 85svh);
+    }
+
+    /* Inset panel + notched corner (~19px gutter, 72×73px cut) */
+    .our-team,
+    .top-studios,
+    .problem-solvers {
+        padding: 0px 0;
+        margin-top: -74px;
+    }
+
+    .angled-panel {
+        width: calc(100% - 38px);
+        --notch-span: 60px;
+        --notch-out: 80px;
+        --notch-in: calc(var(--notch-out) - var(--notch-span));
+        --notch-depth: var(--notch-span);
+        min-height: auto;
+        -webkit-clip-path: polygon(var(--notch-out) 0, 100% 0, 100% 100%, 0 100%,
+                                   0 var(--notch-depth), var(--notch-in) var(--notch-depth));
+        clip-path: polygon(var(--notch-out) 0, 100% 0, 100% 100%, 0 100%,
+                           0 var(--notch-depth), var(--notch-in) var(--notch-depth));
+    }
+
+    .our-team .angled-panel,
+    .top-studios .angled-panel,
+    .problem-solvers .angled-panel {
+        --notch-out: 80px;
+        --notch-in: 20px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    /* Header / nav — mobile */
+    .site-header {
+        padding: 20px 0;
+    }
+
+    .site-header .header-inner {
+        padding: 0 var(--gutter);
+    }
+
+    .site-logo {
+        width: 94px;
+    }
+    .social-list img
+    {
+        height: 22px;
+    }
+    .menu-close {
+       visibility: hidden !important;
+    }
+
+    .primary-nav a
+    {
+        font-size: var(--fontsize-nav-link-md);
+    }
+    .nav-panel {
+        padding: 42px var(--gutter) 40px;
+    }
+
+    .primary-nav ul {
+        gap: 24px;
+    }
+
+    /* Reset desktop-only rules from style.css (higher-specificity selectors) */
+    .hero {
+        max-height: 887px;
+    }
+    .intro {
+        padding: 180px 0 80px;
+        display: flex;
+        align-items: flex-end;
+        background-color: transparent;
+        background-image: none;
+    }
+    .intro__title {
+        text-align: center;
+        letter-spacing: 1.7px;
+    }
+
+    .parallax-band {
+        min-height: 873px;
+        min-height: max(873px, 85svh);
+        padding: 0;
+    }
+
+
+
+    .parallax-band__title {
+        text-align: center;
+        margin-left: 0;
+        letter-spacing: 2.38px;
+        margin-top: -50%;
+    }
+    .filmography__panel .container {
+        padding: 0 15px;
+    }
+    .parallax-band__line {
+        line-height: normal;
+    }
+
+    .parallax-band__line + .parallax-band__line {
+        margin-top: 6px;
+    }
+
+   .services__action
+   {
+    text-align: center;
+    margin: 0 auto;
+   }
+
+    .filmography__panel {
+        margin: 0 var(--gutter);
+        padding: 52px 0 64px;
+    }
+
+    .filmography__grid .filmography__item {
+        width: 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .filmography__footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 58px;
+    }
+    .filmography__action
+    {
+        text-align: center;
+    }
+    .filmography__copy {
+        max-width: none;
+    }
+
+    .services {
+        padding:49px 0  150px;
+    }
+
+    .services__words {
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 26px 0 40px;
+    }
+
+    .services__word {
+        line-height: 45px;
+        letter-spacing: normal;
+        margin-bottom: 0;
+    }
+
+    .services__word + .services__word {
+        margin-top: -7px;
+    }
+
+    .services__footer {
+        flex-direction: column;
+        gap: 56px;
+    }
+
+    .services__copy {
+        max-width: none;
+    }
+
+    .service-card {
+        width: 327px;
+    }
+
+    .service-card__label {
+        left: 22px;
+        bottom: 22px;
+    }
+
+    .our-team__eyebrow,
+    .top-studios__eyebrow,
+    .problem-solvers__eyebrow {
+        text-align: center;
+        max-width: 268px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .our-team__title,
+    .top-studios__title,
+    .problem-solvers__title {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .our-team__row,
+    .problem-solvers__row {
+        flex-direction: column;
+    }
+
+    .top-studios__head {
+        flex-direction: column;
+    }
+
+    .top-studios__copy {
+        max-width: none;
+        padding-top: 0;
+    }
+
+    .problem-solvers__title span:last-child {
+        display: block;
+        margin-top: -2px;
+    }
+
+    .final-cta {
+        min-height: 937px;
+        padding: 120px 0 80px;
+    }
+
+    .final-cta__title {
+        text-align: center;
+        line-height: 1;
+        margin-bottom: 114px;
+    }
+
+    .studio-logos,
+    .studio-logos.row {
+        display: flex;
+        flex-wrap: wrap;
+        grid-template-columns: none;
+        column-gap: normal;
+        row-gap: normal;
+        margin-left: 0;
+        margin-right: 0;
+        --bs-gutter-y: 42px;
+    }
+
+    .studio-logos > .col {
+        flex: 0 0 50%;
+        max-width: 50%;
+        width: 50%;
+        padding: 0;
+    }
+
+    .studio-logos__item img {
+        height: auto;
+    }
+
+    .our-team__row .our-team__media,
+    .problem-solvers__row .problem-solvers__media,
+    .our-team__content,
+    .problem-solvers__content {
+        flex: none;
+        max-width: none;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .our-team__media img,
+    .problem-solvers__media img {
+        height: auto;
+        aspect-ratio: 353 / 208;
+        object-fit: cover;
+    }
+
+    .intro__title-line.js-line-b {
+        padding-left: 0;
+    }
+
+    .intro__copy {
+        max-width: none;
+        margin-left: 0;
+    }
+
+    .final-cta__title > span:first-child,
+    .final-cta__title > span:last-child {
+        padding-left: 0;
+    }
+
+    .services__word:nth-child(2),
+    .services__word:nth-child(3) {
+        padding-left: 0;
+    }
+
+    .site-footer__top.c-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex-direction: unset;
+    }
+
+    .site-footer {
+        padding: 40px var(--gutter) 20px;
+    }
+
+    .site-footer__logo {
+        width: 94px;
+    }
+
+    .site-footer__nav {
+        display: contents;
+        gap: normal;
+        padding-left: 0;
+    }
+
+    .reel-modal {
+        padding: 40px var(--gutter);
+    }
+
+    .reel-modal__close {
+        top: 20px;
+        right: var(--gutter);
+    }
+
+    /* Mobile animation offsets */
+    .anim-ready .js-slide-left {
+        -webkit-transform: translateX(-70px);
+        transform: translateX(-70px);
+    }
+
+    .anim-ready .js-slide-right {
+        -webkit-transform: translateX(70px);
+        transform: translateX(70px);
+        margin-left: 0;
+    }
+
+    .anim-ready .js-rise > span:not(.reveal-line) {
+        -webkit-transform: translateY(28px);
+        transform: translateY(28px);
+    }
+
+    .anim-ready .intro .reveal-line,
+    .anim-ready .final-cta .reveal-line {
+        -webkit-transform: translateY(72px);
+        transform: translateY(72px);
+    }
+}
+
+/*-- ≤991px — large tablet --------------------------------------------------*/
+
+@media (max-width: 991px) {
+    .services__track {
+        gap: 16px;
+    }
+
+    .service-card {
+        width: min(480px, 88vw);
+    }
+}
+
+/*-- ≤768px — tablet portrait -----------------------------------------------*/
+
+@media (max-width: 768px) {
+    .hero {
+        max-height: 887px;
+    }
+
+ 
+
+    .parallax-band {
+        min-height: 873px;
+    }
+
+    .final-cta {
+        min-height: 937px;
+        padding: 120px 0 80px;
+    }
+
+    .service-card {
+        width: min(327px, 85vw);
+    }
+}
+
+/*-- ≤640px — small phone ---------------------------------------------------*/
+
+@media (max-width: 640px) {
+    .hero__reel {
+        left: 0px;
+        bottom: 47px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero__reel-label {
+        font-size: var(--fontsize-reel-label);
+        letter-spacing: var(--tracking-reel-label-sm);
+    }
+
+    .site-footer__top.c-row {
+        column-gap: 48px;
+    }
+}
+
+/*-- Reduced motion ---------------------------------------------------------*/
+
+/*-- ≥2000px — large displays (Figma page 4) -------------------------------*/
+
+@media (min-width: 2000px) {
+    /* ----------------------------------------------------------------------
+       Large-devices layout — Figma "Our Team cards section – large devices
+       layout" (2048px board). Bigger imagery, bigger logos, more air, and the
+       content sits on the vertical centre of each panel.
+       The notched corner is NOT re-declared here: style.css interpolates it
+       across 1440 → 2048 so it keeps growing with the viewport.
+       ---------------------------------------------------------------------- */
+
+    section.our-team.stack-pin,
+    section.top-studios.stack-pin,
+    section.problem-solvers.stack-pin {
+        justify-content: center;
+    }
+
+    /* 1652px of content inside the 2010px panel, per the board */
+    .our-team .container,
+    .top-studios .container,
+    .problem-solvers .container {
+        max-width: 1692px;   /* 1652px of content + 2 x 20px gutter */
+    }
+
+    .our-team .angled-panel,
+    .top-studios .angled-panel,
+    .problem-solvers .angled-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: min(100vh, 100svh);
+        padding-top: calc(var(--notch-depth) + var(--header-offset) + 32px);
+        padding-bottom: 88px;
+    }
+
+    .our-team .angled-panel > .container,
+    .top-studios .angled-panel > .container,
+    .problem-solvers .angled-panel > .container {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    /* Our Team / Problem Solvers — 998x590 still, text centred beside it */
+    .our-team__row,
+    .problem-solvers__row {
+        align-items: center;
+        gap: 78px;
+    }
+
+    .our-team__media,
+    .problem-solvers__media {
+        flex: 0 1 min(998px, 60%);
+        max-width: min(998px, 60%);
+    }
+
+    .our-team__media img,
+    .problem-solvers__media img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        aspect-ratio: 998 / 590;
+    }
+
+    .our-team__content,
+    .problem-solvers__content {
+        flex: 0 1 400px;
+        max-width: 400px;
+    }
+
+    .our-team__title,
+    .problem-solvers__title {
+        margin-bottom: 52px;
+    }
+
+    /* Top Studios */
+    .top-studios .angled-panel {
+        padding-bottom: 96px;
+    }
+
+    .top-studios__rule {
+        margin: 60px 0 76px;
+    }
+
+    /* Two rows of five, spread edge to edge; the marks keep their own
+       proportions and are scaled as a set (1.38x, matching the board). */
+    .studio-logos {
+        zoom: 1.38;
+        column-gap: 32px;
+        row-gap: 80px;
+    }
+
+    .studio-logos__item img {
+        width: auto;
+        height: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .parallax-band__bg,
+    .final-cta__bg {
+        inset: 0;
+        -webkit-transform: none !important;
+        transform: none !important;
+    }
+}
