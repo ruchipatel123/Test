@@ -1,426 +1,254 @@
-/*!
-Project: Cause and FX
-File: menu.css — site header + slide-in navigation panel
-*/
-
-/* ==========================================================================
-   Site header
-   ========================================================================== */
+/* RCPA — site header & navigation */
 
 .site-header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 900;
-    padding: 22px 0;
-    pointer-events: none;
-    -webkit-transition: all 0.4s ease-in-out;
-    -ms-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
+    right: 0;
+    z-index: 1000;
+    background: var(--color-navy);
+    height: 90px;
+    transition: transform 0.3s ease;
 }
 
-.site-header .header-inner {
-    /* Asymmetric — logo closer to left edge, toggle closer to right */
-    padding: 0 20px 0 0;
-}
-
-.header-right {
-    flex: 0 0 auto;
-}
-
-.site-header a,
-.site-header button {
-    pointer-events: auto;
-}
-
-/* While the panel is open the header must sit above it so the toggle
-   (now the close button) and the logo stay reachable */
-body.menu-open .site-header {
-    z-index: 1100;
-}
-
-/* Hidden while scrolling down, revealed on scroll up */
 .site-header.is-hidden {
-    -webkit-transform: translateY(-140%);
-    -ms-transform: translateY(-140%);
-    transform: translateY(-140%);
+    transform: translateY(-100%);
 }
 
-.header-brand {
-    position: relative;
-    flex: 0 0 auto;
+.header-inner {
+    height: 90px;
+    gap: 16px;
 }
-
-.site-logo {
-    display: block;
-    width: 104px;
-    line-height: 0;
-    -webkit-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* While the panel is open the logo gives way to the close X. */
-body.menu-open .site-logo {
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* ==========================================================================
-   Close X — two "=" marks crossed, the same bar motif as the hamburger
-   ========================================================================== */
-
-   .menu-close {
-    position: absolute;
-    top: -7px;
-    left: 10px;
-    z-index: 2;
-    display: block;
-    width: 56px;
-    height: 56px;
-    padding: 0;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: opacity 0.3s ease-in-out 0.1s, visibility 0s linear 0.4s;
-    transition: opacity 0.3s ease-in-out 0.1s, visibility 0s linear 0.4s;
-}
-
-body.menu-open .menu-close {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transition: opacity 0.3s ease-in-out 0.15s, visibility 0s linear 0s;
-    transition: opacity 0.3s ease-in-out 0.15s, visibility 0s linear 0s;
-}
-
-.menu-close__bar {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    width: 42px;
-    height: 3px;
-    margin: -1.5px 0 0 -21px;
-    background-color: var(--color-white);
-}
-
-/* first pair leans one way, second pair the other — 3px apart within each
-   pair, which is what gives the design's double-stroke X */
-.menu-close__bar:nth-child(1) { -webkit-transform: rotate(45deg) translateY(-4px);  transform: rotate(45deg) translateY(-4px); }
-.menu-close__bar:nth-child(2) { -webkit-transform: rotate(45deg) translateY(4px);   transform: rotate(45deg) translateY(4px); }
-.menu-close__bar:nth-child(3) { -webkit-transform: rotate(-45deg) translateY(-4px); transform: rotate(-45deg) translateY(-4px); }
-.menu-close__bar:nth-child(4) { -webkit-transform: rotate(-45deg) translateY(4px);  transform: rotate(-45deg) translateY(4px); }
 
 .site-logo img {
-    display: block;
-    width: 100%;
+    width: 135px;
     height: auto;
 }
 
+.header-tagline {
+    display: none;
+    font-size: var(--fontsize-12);
+    font-weight: 500;
+    letter-spacing: var(--nav-label-tracking);
+    text-transform: uppercase;
+    color: var(--color-white);
+    white-space: nowrap;
+}
 
+.header-tagline__sep {
+    margin: 0 8px;
+    letter-spacing: 2.5px;
+}
 
-/* ==========================================================================
-   Menu toggle — four stacked bars
-   ========================================================================== */
+.primary-nav {
+    display: none;
+    align-items: center;
+    gap: 40px;
+}
+
+.primary-nav a {
+    font-size: var(--fontsize-15);
+    font-weight: 600;
+    color: var(--color-white);
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.primary-nav a.is-active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: var(--color-yellow);
+}
+
+.header-actions {
+    display: none;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-phone {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: var(--fontsize-15);
+    font-weight: 600;
+    color: var(--color-white);
+    white-space: nowrap;
+}
+
+.header-phone__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    background: var(--grey-20);
+}
+
+.header-phone__icon img {
+    width: 16px;
+    height: 16px;
+}
+
+.header-cta {
+    min-width: 162px;
+}
 
 .menu-toggle {
-    position: relative;
-    z-index: 1100;
-    display: block;
-    width: 31px;
-    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
     padding: 0;
-    margin-top: 8px;
-    flex: 0 0 auto;
+    border: none;
+    background: transparent;
+    cursor: pointer;
 }
 
 .menu-toggle__bar {
-    position: absolute;
-    left: 0;
     display: block;
-    width: 31px;
-    height: 3px;
-    background-color: var(--color-white);
-    -webkit-transition: all 0.4s var(--ease-out);
-    -ms-transition: all 0.4s var(--ease-out);
-    -o-transition: all 0.4s var(--ease-out);
-    -moz-transition: all 0.4s var(--ease-out);
-    transition: all 0.4s var(--ease-out);
+    width: 24px;
+    height: 2px;
+    background: var(--color-white);
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.menu-toggle__bar:nth-child(1) { top: 0; }
-.menu-toggle__bar:nth-child(2) { top: 6px; }
-.menu-toggle__bar:nth-child(3) { top: 15px; }
-.menu-toggle__bar:nth-child(4) { top: 21px; }
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
 
-/* Open state — the hamburger steps aside; closing is done with the X that
-   takes the logo's place, as in the design */
-body.menu-open .menu-toggle {
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(2) {
     opacity: 0;
-    pointer-events: none;
 }
 
-/* ==========================================================================
-   Slide-in navigation panel
-   ========================================================================== */
-
-.nav-panel {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 491px;
-    height: 100%;
-    height: 100dvh;
-    padding: 42px 41px 40px;
-    overflow-y: auto;
-    background-image: -webkit-linear-gradient(top, var(--color-red) 0%, var(--color-secondary) 100%);
-    background-image: linear-gradient(180deg, var(--color-red) 0%, var(--color-secondary) 100%);
-    visibility: hidden;
-    -webkit-transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    transform: translateX(100%);
-    -webkit-transition: transform 0.7s var(--ease-out), visibility 0s linear 0.7s;
-    -ms-transition: transform 0.7s var(--ease-out), visibility 0s linear 0.7s;
-    -o-transition: transform 0.7s var(--ease-out), visibility 0s linear 0.7s;
-    -moz-transition: transform 0.7s var(--ease-out), visibility 0s linear 0.7s;
-    transition: transform 0.7s var(--ease-out), visibility 0s linear 0.7s;
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
-body.menu-open .nav-panel {
-    visibility: visible;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-    -webkit-transition: transform 0.7s var(--ease-out), visibility 0s linear 0s;
-    -ms-transition: transform 0.7s var(--ease-out), visibility 0s linear 0s;
-    -o-transition: transform 0.7s var(--ease-out), visibility 0s linear 0s;
-    -moz-transition: transform 0.7s var(--ease-out), visibility 0s linear 0s;
-    transition: transform 0.7s var(--ease-out), visibility 0s linear 0s;
-}
-
-/* Dimmed backdrop behind the panel */
 .nav-backdrop {
     position: fixed;
     inset: 0;
-    z-index: 990;
-    background-color: var(--color-backdrop);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
-    transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 body.menu-open .nav-backdrop {
     opacity: 1;
     visibility: visible;
-    -webkit-transition: opacity 0.5s ease-in-out, visibility 0s linear 0s;
-    transition: opacity 0.5s ease-in-out, visibility 0s linear 0s;
 }
 
-/* The "=" mark at the top of the panel.
-   Hidden below 1024px — full-width panel uses the close X. */
-.nav-panel__mark {
-    display: block;
-    width: 31px;
-    margin-bottom: 26px;
-    flex: 0 0 auto;
-    cursor: pointer;
+.nav-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(320px, 85vw);
+    height: 100vh;
+    background: var(--color-navy);
+    z-index: 999;
+    padding: 100px 30px 40px;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    overflow-y: auto;
 }
 
-
-
-.nav-panel__mark span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--color-white);
-}
-
-.nav-panel__mark span + span {
-    margin-top: 3px;
-}
-
-/* Hairline rules top and bottom of the panel */
-.nav-panel__rule {
-    width: 100%;
-    height: 1px;
-    background-color: var(--color-panel-rule);
-    flex: 0 0 auto;
-}
-
-.primary-nav {
-    padding: 44px 0;
-    margin: auto 0;
-}
-
-.primary-nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 33px;
-}
-
-.primary-nav a {
-    display: inline-block;
-    font-family: var(--font-body);
-    font-size: var(--fontsize-nav-link);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: var(--tracking-nav-link);
-    text-transform: uppercase;
-    color: var(--color-white);
-}
-
-.primary-nav a:hover,
-.primary-nav a:focus-visible {
-    opacity: 1;
-    -webkit-transform: translateX(8px);
-    -ms-transform: translateX(8px);
-    transform: translateX(8px);
-}
-
-/* Staggered reveal of each item once the panel is open */
-.primary-nav li {
-    opacity: 0;
-    -webkit-transform: translateX(40px);
-    -ms-transform: translateX(40px);
-    transform: translateX(40px);
-    -webkit-transition: opacity 0.5s ease-out, transform 0.5s var(--ease-out);
-    transition: opacity 0.5s ease-out, transform 0.5s var(--ease-out);
-}
-
-body.menu-open .primary-nav li {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
+body.menu-open .nav-panel {
     transform: translateX(0);
 }
 
-body.menu-open .primary-nav li:nth-child(1) { transition-delay: 0.28s; }
-body.menu-open .primary-nav li:nth-child(2) { transition-delay: 0.34s; }
-body.menu-open .primary-nav li:nth-child(3) { transition-delay: 0.40s; }
-body.menu-open .primary-nav li:nth-child(4) { transition-delay: 0.46s; }
-body.menu-open .primary-nav li:nth-child(5) { transition-delay: 0.52s; }
-body.menu-open .primary-nav li:nth-child(6) { transition-delay: 0.58s; }
-
-/* Panel footer — FOLLOW US + social icons */
-.nav-panel__social {
-    padding-top: 28px;
-    flex: 0 0 auto;
+.nav-panel__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.nav-panel__social .social-label {
-    display: block;
-    margin-bottom: 14px;
-    font-size: var(--fontsize-footer-label);
-    font-weight: 400;
-    line-height: 19px;
-    letter-spacing: var(--tracking-footer-label);
-    text-transform: uppercase;
+.nav-panel__links a {
+    font-size: var(--fontsize-18);
+    font-weight: 600;
     color: var(--color-white);
 }
 
-.social-list {
+.nav-panel__phone {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nav-panel__phone a {
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: 10px;
+    font-size: var(--fontsize-18);
+    font-weight: 600;
+    color: var(--color-white);
 }
 
-.social-list img {
-    display: block;
-    width: auto;
-    height: 24px;
+.nav-panel__cta {
+    margin-top: 24px;
 }
 
-.social-list .social-list__imdb img {
-    height: 18px;
-}
-
-
-
-/* ==========================================================================
-   Dark nav — for pages (or sections) with light backgrounds
-   --------------------------------------------------------------------------
-   Add `dark-nav` to .site-header and the logo and burger flip to black:
-
-       <header class="site-header dark-nav">
-
-   For a page that mixes light and dark sections, mark the light ones with
-   data-nav="dark" and general.js toggles the class as they pass under the
-   header. Both routes end at the same class, so they can be combined.
-   ========================================================================== */
-
-.site-logo .logo-dark {
-    display: none;
-}
-
-.site-header.dark-nav .site-logo .logo-light {
-    display: none;
-}
-
-.site-header.dark-nav .site-logo .logo-dark {
-    display: block;
-}
-
-.site-header.dark-nav .menu-toggle__bar,
-.site-header.dark-nav .menu-close__bar {
-    background-color: var(--grey-90);
-}
-
-.site-header.dark-nav .menu-toggle:focus-visible,
-.site-header.dark-nav .menu-close:focus-visible {
-    outline-color: var(--grey-90);
-}
-
-/* While the panel is open the close X sits over the dimmed page, so it stays
-   white whatever the page background is. (The logo itself is faded out by
-   then, so it needs no dark-nav handling here.) */
-body.menu-open .site-header .menu-toggle__bar,
-body.menu-open .site-header .menu-close__bar {
-    background-color: var(--color-white);
-}
-
-body.menu-open .site-header .menu-toggle:focus-visible,
-body.menu-open .site-header .menu-close:focus-visible {
-    outline-color: var(--color-white);
-}
-
-/* ===== Responsive — menu.css ===== */
-
-@media (max-width: 1024px) {
-    .site-header {
-        padding: 20px 0;
-    }
-
-    .site-header .header-inner {
-        padding: 0;
+@media (min-width: 992px) {
+    .header-inner {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+        column-gap: 24px;
     }
 
     .site-logo {
-        width: 94px;
+        grid-row: 1 / 3;
+        align-self: center;
     }
 
-    .menu-close {
-        visibility: hidden !important;
+    .header-tagline {
+        display: block;
+        grid-column: 2;
+        grid-row: 1;
+        padding-top: 4px;
     }
 
-    .primary-nav a {
-        font-size: var(--fontsize-nav-link-md);
+    .primary-nav {
+        display: flex;
+        grid-column: 2;
+        grid-row: 2;
     }
 
-    .nav-panel {
-        padding: 42px var(--gutter) 40px;
+    .header-actions {
+        display: flex;
+        grid-column: 3;
+        grid-row: 1 / 3;
+        align-self: center;
     }
 
-    .primary-nav ul {
-        gap: 24px;
-    }
-
-    .nav-panel__mark {
+    .menu-toggle {
         display: none;
+    }
+
+    .nav-panel,
+    .nav-backdrop {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header-inner {
+        column-gap: 40px;
+    }
+
+    .primary-nav {
+        gap: 48px;
     }
 }

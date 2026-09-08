@@ -3,31 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Cause and FX — We Dare To Make It Happen</title>
-    <meta name="description" content="Cause and FX is a leading New Zealand VFX studio, bringing creativity to life across the big screen and beyond.">
+    <title>RCPA — Reinforced Concrete Pipes &amp; Precast Products for Perth &amp; WA</title>
+    <meta name="description" content="Australia's only nationally operated, Australian-owned pipe company specialising in vertically cast steel reinforced concrete pipes, culverts and precast products.">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Geist+Mono:wght@300&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="style.css">
-
-    <!-- Runs before first paint: marks the document so the CSS can park every
-         animated element at its start position. Without this the page paints
-         them in place for a frame or two before general.js loads, and you see
-         the content flash before it animates. Skipped under reduced-motion,
-         and general.js removes it again if GSAP is unavailable, so the content
-         is never left hidden. -->
-    <script>
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.documentElement.className += ' anim-ready';
-        }
-    </script>
 </head>
 <body>
 
@@ -39,513 +27,385 @@
 <header class="site-header" id="masthead">
     <div class="container">
         <div class="header-inner d-flex align-items-center justify-content-between">
-            <div class="header-brand">
-                <a class="site-logo" href="index.html" title="Cause and FX">
-                    <img class="logo-light" src="images/logo.svg" alt="Cause and FX">
-                    <img class="logo-dark" src="images/logo-dark.svg" alt="Cause and FX">
+            <a class="site-logo" href="index.html" title="RCPA">
+                <img src="images/logo/rcpa-logo.png" alt="Reinforced Concrete Pipes Australia">
+            </a>
+
+            <div class="header-tagline">
+                Reinforced Concrete Pipes &amp; Culverts
+                <span class="header-tagline__sep">|</span>
+                Concrete Products
+            </div>
+
+            <nav class="primary-nav" aria-label="Primary navigation">
+                <a href="index.html" class="is-active">Home</a>
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <a class="header-phone" href="tel:+61894344055">
+                    <span class="header-phone__icon">
+                        <img src="images/icons/phone-header.svg" alt="" width="16" height="16">
+                    </span>
+                    (08) 9434 4055
                 </a>
-
-                <!-- Replaces the logo while the panel is open, matching the design -->
-                <button class="menu-close" type="button" aria-label="Close menu">
-                    <span class="menu-close__bar"></span>
-                    <span class="menu-close__bar"></span>
-                    <span class="menu-close__bar"></span>
-                    <span class="menu-close__bar"></span>
-                </button>
+                <a class="btn-primary-rcpa header-cta" href="#contact">Request A Quote</a>
             </div>
 
-            <div class="header-right d-flex align-items-center">
-                <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
-                    <span class="menu-toggle__bar"></span>
-                    <span class="menu-toggle__bar"></span>
-                    <span class="menu-toggle__bar"></span>
-                    <span class="menu-toggle__bar"></span>
-                </button>
-            </div>
+            <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-navigation">
+                <span class="menu-toggle__bar"></span>
+                <span class="menu-toggle__bar"></span>
+                <span class="menu-toggle__bar"></span>
+            </button>
         </div>
     </div>
 </header>
 
 <div class="nav-backdrop" hidden></div>
 
-<!-- ==========================================================
-     SLIDE-IN NAVIGATION PANEL
-     ========================================================== -->
-<nav class="nav-panel" id="primary-navigation" aria-label="Primary navigation">
-    <span class="nav-panel__mark" aria-hidden="true">
-        <span></span>
-        <span></span>
-    </span>
-
-    <span class="nav-panel__rule"></span>
-
-    <div class="primary-nav">
-        <ul>
-            <li><a href="filmography.html" title="Filmography">Filmography</a></li>
-            <li><a href="services.html" title="Services">Services</a></li>
-            <li><a href="people.html" title="People">People</a></li>
-            <li><a href="news.html" title="News &amp; Insights">News &amp; Insights</a></li>
-            <li><a href="careers.html" title="Careers">Careers</a></li>
-            <li><a href="contact.html" title="Contact">Contact</a></li>
-        </ul>
+<nav class="nav-panel" id="mobile-navigation" aria-label="Mobile navigation">
+    <ul class="nav-panel__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-panel__phone">
+        <a href="tel:+61894344055">
+            <img src="images/icons/phone-header.svg" alt="" width="18" height="18">
+            (08) 9434 4055
+        </a>
     </div>
-
-    <span class="nav-panel__rule"></span>
-
-    <div class="nav-panel__social">
-        <span class="social-label">Follow us</span>
-        <ul class="social-list">
-            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on Instagram (opens in new tab)"><img src="images/social/instagram.svg" alt=""></a></li>
-            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on Facebook (opens in new tab)"><img src="images/social/facebook.svg" alt=""></a></li>
-            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on LinkedIn (opens in new tab)"><img src="images/social/linkedin.svg" alt=""></a></li>
-            <li class="social-list__imdb"><a href="https://imdb.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on IMDb (opens in new tab)"><img src="images/social/imdb.svg" alt=""></a></li>
-        </ul>
+    <div class="nav-panel__cta">
+        <a class="btn-primary-rcpa btn-primary-rcpa--lg" href="#contact">Request A Quote</a>
     </div>
 </nav>
 
 <main id="primary-content">
 
-    <!-- Hero + intro share a stage so the hero stays pinned only while the
-         intro rides over it, then releases -->
-    <div class="hero-stage">
-
-    <!-- ==========================================================
-         HERO — pinned show-reel video
-         ========================================================== -->
-    <!-- ACF layout: hero_banner -->
-    <section class="hero" aria-label="Show reel">
-        <div class="hero__media-wrap">
-            <video class="hero__media" poster="images/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-                <source src="videos/hero-reel.mp4" type="video/mp4">
-            </video>
+<!-- ==========================================================
+     HERO
+     ========================================================== -->
+<section class="hero-banner">
+    <div class="hero-banner__bg" aria-hidden="true">
+        <img src="images/hero/hero-bg.jpg" alt="">
+    </div>
+    <div class="hero-banner__overlay" aria-hidden="true"></div>
+    <div class="container">
+        <div class="hero-banner__eyebrow">
+            <span class="hero-banner__eyebrow-bar"></span>
+            <span class="hero-banner__eyebrow-text">Australian-owned · Made in WA</span>
         </div>
+        <h1 class="hero-banner__title">Reinforced Concrete Pipes &amp; Precast Products for Perth &amp; WA</h1>
+        <div class="hero-banner__desc">Australia's only nationally operated, Australian-owned pipe company specialising in vertically cast steel reinforced concrete pipes, culverts and precast products for civil construction.</div>
+        <div class="hero-banner__actions">
+            <a class="btn-primary-rcpa btn-primary-rcpa--lg" href="#contact">Request A Quote</a>
+            <a class="btn-ghost-rcpa" href="#products">Explore Products</a>
+        </div>
+    </div>
+</section>
 
-        <div class="hero__overlay not-active" aria-hidden="true"></div>
-
-        <button class="hero__reel js-reel-open" type="button" aria-haspopup="dialog" aria-controls="show-reel">
-            <img class="hero__reel-icon" src="images/brandmark.svg" alt="">
-            <span class="hero__reel-label">Watch full show reel</span>
-        </button>
-    </section>
-
-    <!-- ==========================================================
-         INTRO — text scrolls over the fading hero
-         ========================================================== -->
-    <!-- ACF layout: intro -->
-    <section class="intro">
-        <div class="container">
-            <h1 class="intro__title display-heading js-rise">
-                <span class="intro__title-line reveal-line js-line-a outline"><span>We dare to</span></span>
-                <span class="intro__title-line reveal-line js-line-b"><span>Make it happen</span></span>
-            </h1>
-
-            <div class="intro__copy lead-copy js-reveal">
-                <p>Cause and FX is a leading VFX studio, bringing creativity to life across the big screen and beyond.</p>
-                <p>We bring stories to life with striking visual effects in film, television and beyond. Our artistry and innovation set us apart.</p>
+<!-- ==========================================================
+     TRUST BAR
+     ========================================================== -->
+<section class="trust-bar" aria-label="Key credentials">
+    <div class="container">
+        <div class="trust-bar__inner">
+            <div class="trust-bar__item">
+                <div class="trust-bar__heading">
+                    <img src="images/icons/check.svg" alt="" width="24" height="24">
+                    <span class="trust-bar__title">AS/NZS Compliant</span>
+                </div>
+                <div class="trust-bar__desc">Manufactured to Australian Standards</div>
+            </div>
+            <div class="trust-bar__item">
+                <div class="trust-bar__heading">
+                    <img src="images/icons/check.svg" alt="" width="24" height="24">
+                    <span class="trust-bar__title">National Supplier</span>
+                </div>
+                <div class="trust-bar__desc">Sole national vertically-cast pipe maker</div>
+            </div>
+            <div class="trust-bar__item">
+                <div class="trust-bar__heading">
+                    <img src="images/icons/check.svg" alt="" width="24" height="24">
+                    <span class="trust-bar__title">Perth &amp; Regional WA</span>
+                </div>
+                <div class="trust-bar__desc">Local manufacturing &amp; supply</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    </div><!-- /.hero-stage -->
+<!-- ==========================================================
+     WHO WE ARE
+     ========================================================== -->
+<section class="who-we-are" id="about">
+    <div class="container">
+        <div class="row who-we-are__row">
+            <div class="col-12 col-lg-5">
+                <div class="who-we-are__heading">
+                    <div class="section-label">
+                        <span class="section-label__bar"></span>
+                        <span class="section-label__text">Who we are</span>
+                    </div>
+                    <h2 class="who-we-are__title">Engineering the pipes and precast that WA is built on</h2>
+                </div>
+                <div class="who-we-are__media">
+                    <img src="images/about/about.jpg" alt="Construction workers installing reinforced concrete pipes">
+                </div>
+            </div>
+            <div class="col-12 col-lg-7">
+                <div class="who-we-are__content">
+                    <div>RCPA is Australia's only nationally operated, Australian-owned pipe company, specialising in the supply of vertically cast steel-reinforced concrete pipes. Formed in 2009 through the merger of Reinforced Concrete Pipes (RCP) and Australasian Pipeline &amp; Precast (APP), RCPA is committed to excellence in manufacturing, technology, and innovation. The company pioneered the vertical cast pipe process in Australia and remains the sole national supplier of this product.</div>
+                    <div>Driven by core values of safety, community, and environmental protection, RCPA adheres to strict compliance with regulations. With a focus on quality, efficiency, and sustainability, they continuously improve their products through advanced technologies.</div>
+                    <div>RCPA also supports the industry through active involvement in associations like the Concrete Pipe Association of Australasia (CPAA) and the National Precast Concrete Association of Australia (NPCAA). Their values, which emphasise being at the forefront of innovation, guide everything they do.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- ==========================================================
-         PARALLAX BAND — "DELIVERING THE EXTRAORDINARY"
-         ========================================================== -->
-    <!-- ACF layout: parallax_band -->
-    <section class="parallax-band stack-pin" aria-label="Delivering the extraordinary">
-        <div class="parallax-band__bg"></div>
+<!-- ==========================================================
+     PRODUCT CATEGORIES
+     ========================================================== -->
+<section class="product-categories" id="products">
+    <div class="container">
+        <div class="product-categories__header">
+            <div class="section-label section-label--center">
+                <span class="section-label__bar"></span>
+                <span class="section-label__text">What we make</span>
+                <span class="section-label__bar"></span>
+            </div>
+            <h2 class="product-categories__title">Product Categories</h2>
+            <div class="product-categories__desc">Explore our full range of reinforced concrete pipes and precast products. Select a category to view detail.</div>
+        </div>
+        <div class="row product-categories__grid">
+            <div class="col-12 col-sm-6 col-xl-3">
+                <a class="product-card" href="#">
+                    <div class="product-card__media">
+                        <img src="images/products/concrete-pipes.jpg" alt="Stacked reinforced concrete pipes">
+                        <span class="product-card__icon"><img src="images/icons/pipe.svg" alt=""></span>
+                    </div>
+                    <div class="product-card__footer">
+                        <span class="product-card__title">Concrete Pipes</span>
+                        <img class="product-card__arrow" src="images/icons/arrow.svg" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+                <a class="product-card" href="#">
+                    <div class="product-card__media">
+                        <img src="images/products/box-culverts.jpg" alt="Box culverts on site">
+                        <span class="product-card__icon"><img src="images/icons/box.svg" alt=""></span>
+                    </div>
+                    <div class="product-card__footer">
+                        <span class="product-card__title">Box Culverts</span>
+                        <img class="product-card__arrow" src="images/icons/arrow.svg" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+                <a class="product-card" href="#">
+                    <div class="product-card__media">
+                        <img src="images/products/liners.jpg" alt="Precast liners, bases and covers">
+                        <span class="product-card__icon"><img src="images/icons/land.svg" alt=""></span>
+                    </div>
+                    <div class="product-card__footer">
+                        <span class="product-card__title">Liners, Bases &amp; Covers</span>
+                        <img class="product-card__arrow" src="images/icons/arrow.svg" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+                <a class="product-card" href="#">
+                    <div class="product-card__media">
+                        <img src="images/products/headwalls.jpg" alt="Concrete headwall installation">
+                        <span class="product-card__icon"><img src="images/icons/wall.svg" alt=""></span>
+                    </div>
+                    <div class="product-card__footer">
+                        <span class="product-card__title">Headwalls</span>
+                        <img class="product-card__arrow" src="images/icons/arrow.svg" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <h2 class="parallax-band__title display-heading">
-            <span class="parallax-band__line js-slide-left outline">Delivering the</span>
-            <span class="parallax-band__line js-slide-right">Extraordinary</span>
-        </h2>
-    </section>
-
-    <!-- ==========================================================
-         FILMOGRAPHY
-         ========================================================== -->
-    <!-- ACF layout: filmography -->
-    <section class="filmography">
-        <div class="filmography__panel">
-            <div class="container">
-                <h2 class="eyebrow filmography__eyebrow js-reveal">Our filmography</h2>
-
-                <ul class="filmography__grid row g-3">
-                    <li class="col-6 filmography__item js-poster">
-                        <a class="poster" href="filmography.html" title="East of Eden">
-                            <img src="images/posters/east-of-eden.jpg" alt="East of Eden — a Netflix series">
-                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
-                        </a>
+<!-- ==========================================================
+     WHY CHOOSE RCPA
+     ========================================================== -->
+<section class="why-choose">
+    <div class="container">
+        <div class="row why-choose__row">
+            <div class="col-12 col-lg-7">
+                <h2 class="why-choose__title">Why Choose RCPA</h2>
+                <ul class="why-choose__list">
+                    <li class="why-choose__item">
+                        <span class="why-choose__num">01</span>
+                        <span class="why-choose__text">Australia's only nationally operated, Australian-owned pipe company.</span>
                     </li>
-                    <li class="col-6 filmography__item js-poster">
-                        <a class="poster" href="filmography.html" title="The Wrecking Crew">
-                            <img src="images/posters/wrecking-crew.jpg" alt="The Wrecking Crew — a Prime Video original movie">
-                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
-                        </a>
+                    <li class="why-choose__item">
+                        <span class="why-choose__num">02</span>
+                        <span class="why-choose__text">Sole national supplier of vertically cast steel-reinforced concrete pipes.</span>
                     </li>
-                    <li class="col-6 filmography__item js-poster">
-                        <a class="poster" href="filmography.html" title="Star Trek: Strange New Worlds">
-                            <img src="images/posters/strange-new-worlds.jpg" alt="Star Trek: Strange New Worlds — a Paramount+ original">
-                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
-                        </a>
+                    <li class="why-choose__item">
+                        <span class="why-choose__num">03</span>
+                        <span class="why-choose__text">Pioneered the vertical dry-cast pipe process in Australia.</span>
                     </li>
-                    <li class="col-6 filmography__item js-poster">
-                        <a class="poster" href="filmography.html" title="Chief of War">
-                            <img src="images/posters/chief-of-war.jpg" alt="Chief of War, starring Jason Momoa — an Apple TV+ series">
-                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
-                        </a>
+                    <li class="why-choose__item">
+                        <span class="why-choose__num">04</span>
+                        <span class="why-choose__text">Manufactured to Australian Standards &amp; Roads WA requirements.</span>
                     </li>
-                    <li class="col-6 filmography__item js-poster">
-                        <a class="poster" href="filmography.html" title="M3GAN 2.0">
-                            <img src="images/posters/megan-2.jpg" alt="M3GAN 2.0">
-                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
-                        </a>
-                    </li>
-                    <li class="col-6 filmography__item js-poster">
-                        <a class="poster" href="filmography.html" title="Star Trek: Starfleet Academy">
-                            <img src="images/posters/starfleet-academy.jpg" alt="Star Trek: Starfleet Academy — a Paramount+ original series">
-                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
-                        </a>
-                    </li>
-                    <li class="col-6 filmography__item js-poster">
-                        <a class="poster" href="filmography.html" title="Spartacus: House of Ashur">
-                            <img src="images/posters/spartacus.jpg" alt="Spartacus: House of Ashur — a Starz series">
-                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
-                        </a>
-                    </li>
-                    <li class="col-6 filmography__item js-poster">
-                        <a class="poster" href="filmography.html" title="Twisted Metal">
-                            <img src="images/posters/twisted-metal.jpg" alt="Twisted Metal">
-                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
-                        </a>
-                    </li>
-                    <li class="col-6 filmography__item js-poster">
-                        <a class="poster" href="filmography.html" title="Zombies 4: Dawn of the Vampires">
-                            <img src="images/posters/zombies-4.jpg" alt="Disney Zombies 4: Dawn of the Vampires">
-                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
-                        </a>
-                    </li>
-                    <li class="col-6 filmography__item js-poster">
-                        <a class="poster" href="filmography.html" title="Star Trek: Section 31">
-                            <img src="images/posters/section-31.jpg" alt="Star Trek: Section 31, starring Michelle Yeoh">
-                            <span class="poster__overlay"><span class="poster__label">See more</span></span>
-                        </a>
+                    <li class="why-choose__item">
+                        <span class="why-choose__num">05</span>
+                        <span class="why-choose__text">Active CPAA &amp; NPCAA member, driven by safety, community &amp; environment.</span>
                     </li>
                 </ul>
+            </div>
+            <div class="col-12 col-lg-5">
+                <div class="why-choose__media">
+                    <img src="images/why-choose/team.jpg" alt="RCPA team members at a concrete pipe yard">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                <div class="filmography__footer c-row">
-                    <div class="filmography__copy body-copy js-reveal">
-                        <p>We deliver jaw-dropping, enthralling visual effects across some of the most memorable productions of the last decade.</p>
-                        <p>From Star Trek&rsquo;s deep reaches of space to Twisted Metal&rsquo;s gritty post-apocalypse, from Mordor&rsquo;s craggy peaks in Rings of Power to the high seas of Our Flag means Death, we believe the power of limitless creativity and innovation pushes the frontier of what can be achieved.</p>
+<!-- ==========================================================
+     CLIENT LOGOS
+     ========================================================== -->
+<section class="client-logos">
+    <div class="container">
+        <div class="client-logos__header">
+            <div class="section-label section-label--center">
+                <span class="section-label__bar"></span>
+                <span class="section-label__text">Trusted across WA</span>
+                <span class="section-label__bar"></span>
+            </div>
+            <h2 class="client-logos__title">Our Clients Include</h2>
+        </div>
+        <div class="client-logos__grid">
+            <div class="client-logos__cell"><img src="images/clients/client-logo.png" alt="Civil Construction Foundation"></div>
+            <div class="client-logos__cell"><img src="images/clients/client-logo.png" alt="Civil Construction Foundation"></div>
+            <div class="client-logos__cell"><img src="images/clients/client-logo.png" alt="Civil Construction Foundation"></div>
+            <div class="client-logos__cell"><img src="images/clients/client-logo.png" alt="Civil Construction Foundation"></div>
+            <div class="client-logos__cell"><img src="images/clients/client-logo.png" alt="Civil Construction Foundation"></div>
+            <div class="client-logos__cell"><img src="images/clients/client-logo.png" alt="Civil Construction Foundation"></div>
+            <div class="client-logos__cell"><img src="images/clients/client-logo.png" alt="Civil Construction Foundation"></div>
+            <div class="client-logos__cell"><img src="images/clients/client-logo.png" alt="Civil Construction Foundation"></div>
+            <div class="client-logos__cell"><img src="images/clients/client-logo.png" alt="Civil Construction Foundation"></div>
+            <div class="client-logos__cell"><img src="images/clients/client-logo.png" alt="Civil Construction Foundation"></div>
+            <div class="client-logos__cell"><img src="images/clients/client-logo.png" alt="Civil Construction Foundation"></div>
+            <div class="client-logos__cell"><img src="images/clients/client-logo.png" alt="Civil Construction Foundation"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================
+     CTA BANNERS
+     ========================================================== -->
+<section class="cta-banners">
+    <div class="container">
+        <div class="row cta-banners__row">
+            <div class="col-12 col-lg-6">
+                <div class="cta-banner">
+                    <div class="cta-banner__bg" aria-hidden="true">
+                        <img src="images/cta/brochure.jpg" alt="">
                     </div>
-                    <div class="filmography__action js-reveal">
-                        <a class="btn btn-red-border" href="filmography.html" title="View more">View more</a>
+                    <div class="cta-banner__overlay" aria-hidden="true"></div>
+                    <div class="cta-banner__content">
+                        <h2 class="cta-banner__title">View our Brochure</h2>
+                        <a class="btn-primary-rcpa btn-primary-rcpa--lg" href="#">View Brochure</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="cta-banner cta-banner--pricing">
+                    <div class="cta-banner__bg" aria-hidden="true">
+                        <img src="images/cta/pricing.jpg" alt="">
+                    </div>
+                    <div class="cta-banner__overlay" aria-hidden="true"></div>
+                    <div class="cta-banner__content">
+                        <h2 class="cta-banner__title">View Pricing Guide</h2>
+                        <a class="btn-primary-rcpa btn-primary-rcpa--lg" href="#">View Pricing</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- ==========================================================
-         SERVICES
-         ========================================================== -->
-    <!-- ACF layout: services -->
-    <section class="services">
-        <div class="container">
-            <h2 class="eyebrow services__eyebrow js-reveal">Unleashing what we&rsquo;re capable of</h2>
-        </div>
-
-        <!-- Display words: a right-descending staircase that sweeps in from the left -->
-        <div class="container">
-            <div class="services__words" aria-hidden="true">
-                <span class="services__word display-heading js-stair">Dare.</span>
-                <span class="services__word display-heading js-stair outline">Craft.</span>
-                <span class="services__word display-heading js-stair">Deliver.</span>
-            </div>
-        </div>
-        <h3 class="sr-only">Dare. Craft. Deliver.</h3>
-
-        <!-- Horizontal card track -->
-        <div class="services__viewport">
-            <!-- The second set is a duplicate so the marquee can loop seamlessly -->
-            <ul class="services__track js-service-track">
-                <li class="service-card">
-                    <a class="service-card__link" href="services.html" title="Large format &amp; immersive">
-                        <video class="service-card__media" poster="images/services/service-large-format.jpg"
-                           autoplay muted loop playsinline preload="none"
-                           aria-label="Large format and immersive work — a figure on a rocky hillside">
-                            <source src="videos/service-large-format.mp4" type="video/mp4">
-                        </video>
-                    <span class="service-card__label">Large format &amp; immersive</span>
-                </a>
-                </li>
-                <li class="service-card">
-                    <a class="service-card__link" href="services.html" title="Visual effects">
-                        <video class="service-card__media" poster="images/services/service-visual-effects.jpg"
-                           autoplay muted loop playsinline preload="none"
-                           aria-label="Visual effects work — a flaming character from Twisted Metal">
-                            <source src="videos/service-visual-effects.mp4" type="video/mp4">
-                        </video>
-                    <span class="service-card__label">Visual effects</span>
-                </a>
-                </li>
-                <li class="service-card">
-                    <a class="service-card__link" href="services.html" title="Virtual production">
-                        <video class="service-card__media" poster="images/services/service-virtual-production.jpg"
-                           autoplay muted loop playsinline preload="none"
-                           aria-label="Virtual production work — a period street scene">
-                            <source src="videos/service-virtual-production.mp4" type="video/mp4">
-                        </video>
-                    <span class="service-card__label">Virtual production</span>
-                </a>
-                </li>
-                <li class="service-card" aria-hidden="true">
-                    <a class="service-card__link" href="services.html" title="Large format &amp; immersive" tabindex="-1">
-                        <video class="service-card__media" poster="images/services/service-large-format.jpg"
-                           autoplay muted loop playsinline preload="none" tabindex="-1"
-                           aria-label="Large format and immersive work — a figure on a rocky hillside">
-                            <source src="videos/service-large-format.mp4" type="video/mp4">
-                        </video>
-                    <span class="service-card__label">Large format &amp; immersive</span>
-                </a>
-                </li>
-                <li class="service-card" aria-hidden="true">
-                    <a class="service-card__link" href="services.html" title="Visual effects" tabindex="-1">
-                        <video class="service-card__media" poster="images/services/service-visual-effects.jpg"
-                           autoplay muted loop playsinline preload="none" tabindex="-1"
-                           aria-label="Visual effects work — a flaming character from Twisted Metal">
-                            <source src="videos/service-visual-effects.mp4" type="video/mp4">
-                        </video>
-                    <span class="service-card__label">Visual effects</span>
-                </a>
-                </li>
-                <li class="service-card" aria-hidden="true">
-                    <a class="service-card__link" href="services.html" title="Virtual production" tabindex="-1">
-                        <video class="service-card__media" poster="images/services/service-virtual-production.jpg"
-                           autoplay muted loop playsinline preload="none" tabindex="-1"
-                           aria-label="Virtual production work — a period street scene">
-                            <source src="videos/service-virtual-production.mp4" type="video/mp4">
-                        </video>
-                    <span class="service-card__label">Virtual production</span>
-                </a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="container">
-            <div class="services__footer c-row">
-                <div class="services__copy body-copy js-reveal">
-                    <p>Visual effects is a landscape of opportunity and ambition, and we thrive on discovering the creative solutions to even the most technical challenges.</p>
-                    <p>A team of creative problem-solvers, we approach every project with intention and technical depth, solving problems and going beyond the brief for our partners. And when we show up, it&rsquo;s with the calm, predictable execution that protects budgets and timelines.</p>
-                </div>
-                <div class="services__action js-reveal">
-                    <a class="btn" href="services.html" title="View services">View services</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================================
-         OUR TEAM
-         ========================================================== -->
-    <!-- ACF layout: our_team -->
-    <section class="our-team stack-pin">
-        <div class="angled-panel">
-        <div class="container">
-            <h2 class="eyebrow our-team__eyebrow js-reveal">Story telling is in our soul</h2>
-
-            <div class="display-heading our-team__title js-rise">
-                <span class="outline">Our</span>
-                <span>Team</span>
-            </div>
-
-            <div class="our-team__row c-row">
-                <div class="our-team__media js-reveal">
-                    <img src="images/team.jpg" alt="Two Cause and FX artists reviewing a character render on screen">
-                </div>
-
-                <div class="our-team__content js-reveal">
-                    <h3 class="subheading">Pushing our expertise beyond what&rsquo;s possible</h3>
-                    <div class="body-copy">
-                        <p>Established in 2011, Cause and FX has quickly risen to become one of New Zealand&rsquo;s leading independent VFX studios. Our team of passionate, capable artists bring creative flair to everything we do.</p>
-                    </div>
-                    <a class="btn our-team__btn" href="people.html" title="Meet the team">Meet the team</a>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-
-    <!-- ==========================================================
-         TOP STUDIOS
-         ========================================================== -->
-    <!-- ACF layout: top_studios -->
-    <section class="top-studios stack-pin">
-        <div class="angled-panel">
-        <div class="container">
-            <h2 class="eyebrow top-studios__eyebrow js-reveal">Trusted by the world&rsquo;s</h2>
-
-            <div class="top-studios__head c-row">
-                <div class="display-heading top-studios__title js-rise">
-                    <span class="outline">Top</span>
-                    <span>Studios</span>
-                </div>
-
-                <div class="top-studios__copy body-copy js-reveal">
-                    <p>Our industry&rsquo;s visionaries trust us to protect and deliver on their creative vision. They turn to Cause and FX to tackle the big jobs, round out the projects and protect their IP.</p>
-                </div>
-            </div>
-
-            <span class="top-studios__rule js-rule"></span>
-
-            <ul class="studio-logos row row-cols-2">
-                <li class="col studio-logos__item js-logo"><img src="images/logos/paramount.svg" alt="Paramount"></li>
-                <li class="col studio-logos__item js-logo"><img src="images/logos/netflix.svg" alt="Netflix"></li>
-                <li class="col studio-logos__item js-logo"><img src="images/logos/disney.svg" alt="Disney"></li>
-                <li class="col studio-logos__item js-logo"><img src="images/logos/prime-amgm.svg" alt="Prime Video and Amazon MGM Studios"></li>
-                <li class="col studio-logos__item js-logo"><img src="images/logos/hbo.svg" alt="HBO"></li>
-                <li class="col studio-logos__item js-logo"><img src="images/logos/lionsgate.svg" alt="Lionsgate"></li>
-                <li class="col studio-logos__item js-logo"><img src="images/logos/sony-pictures.svg" alt="Sony Pictures"></li>
-                <li class="col studio-logos__item js-logo"><img src="images/logos/peacock.svg" alt="Peacock"></li>
-                <li class="col studio-logos__item js-logo"><img src="images/logos/abc-signature.svg" alt="ABC Signature"></li>
-                <li class="col studio-logos__item js-logo"><img src="images/logos/a24.svg" alt="A24"></li>
-            </ul>
-        </div>
-        </div>
-    </section>
-
-    <!-- ==========================================================
-         PROBLEM SOLVERS
-         ========================================================== -->
-    <!-- ACF layout: problem_solvers -->
-    <section class="problem-solvers stack-pin">
-        <div class="angled-panel">
-        <div class="container">
-            <h2 class="eyebrow problem-solvers__eyebrow js-reveal">A steady hand</h2>
-
-            <div class="display-heading problem-solvers__title js-rise">
-                <span class="outline">Problem</span>
-                <span>Solvers</span>
-            </div>
-
-            <div class="problem-solvers__row c-row">
-                <div class="problem-solvers__media js-reveal">
-                    <img src="images/problem-solvers.jpg" alt="A flaming-headed Twisted Metal character beside an ice cream truck">
-                </div>
-
-                <div class="problem-solvers__content js-reveal">
-                    <div class="body-copy">
-                        <p>We are your true creative partners. Our value is best felt when we&rsquo;re involved early in a project, offering creative input and solutions early in the process. We&rsquo;re natural problem-solvers, and our record of working with top clients like Disney, Apple, Netflix, Amazon and Paramount speaks for itself.</p>
-                    </div>
-                    <a class="btn problem-solvers__btn" href="about.html" title="Learn more">Learn more</a>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-
-    <!-- ==========================================================
-         FINAL CTA — parallax
-         ========================================================== -->
-    <!-- ACF layout: final_cta -->
-    <section class="final-cta">
-        <div class="final-cta__bg"></div>
-
-        <div class="container final-cta__inner">
-            <h2 class="eyebrow final-cta__eyebrow js-reveal">Ready to bring your</h2>
-
-            <div class="display-heading final-cta__title js-rise">
-                <span class="reveal-line outline"><span>Imagination</span></span>
-                <span class="reveal-line"><span>To life?</span></span>
-            </div>
-
-            <div class="final-cta__action js-reveal">
-                <a class="btn" href="contact.html" title="Get in touch">Get in touch</a>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
 </main>
 
 <!-- ==========================================================
      FOOTER
      ========================================================== -->
-<footer class="site-footer" id="colophon">
-        <div class="site-footer__top c-row">
-            <div class="site-footer__brand">
-                <a class="site-footer__logo" href="index.html" title="Cause and FX">
-                    <img src="images/logo.svg" alt="Cause and FX">
+<footer class="site-footer" id="contact">
+    <div class="container">
+        <div class="row site-footer__grid">
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="site-footer__logo">
+                    <img src="images/logo/rcpa-logo.png" alt="Reinforced Concrete Pipes Australia">
+                </div>
+                <div class="site-footer__about">Australia's only nationally operated, Australian-owned pipe company specialising in vertically cast steel-reinforced concrete pipes &amp; precast products for civil construction across Perth &amp; WA.</div>
+                <div class="site-footer__certs">
+                    <img src="images/footer/cert-1.png" alt="Certification badge">
+                    <span class="site-footer__certs-divider" aria-hidden="true"></span>
+                    <img src="images/footer/cert-2.png" alt="Certification badge">
+                    <span class="site-footer__certs-divider" aria-hidden="true"></span>
+                    <img src="images/footer/cert-3.png" alt="Certification badge">
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2">
+                <div class="site-footer__col-title">Products</div>
+                <ul class="site-footer__links">
+                    <li><a href="#">Reinforced Concrete Pipes</a></li>
+                    <li><a href="#">Box Culverts</a></li>
+                    <li><a href="#">Liners, Bases &amp; Covers</a></li>
+                    <li><a href="#">Headwalls</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2">
+                <div class="site-footer__col-title">Company</div>
+                <ul class="site-footer__links">
+                    <li><a href="#about">About RCPA</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#contact">Request a Quote</a></li>
+                    <li><a href="#">Product Brochure</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="site-footer__col-title">Get Started</div>
+                <div class="site-footer__cta-stack">
+                    <a class="btn-block-rcpa" href="#">View Pricing</a>
+                    <a class="btn-outline-rcpa" href="#">View Brochure</a>
+                </div>
+                <a class="site-footer__phone" href="tel:+61894344055">
+                    <img src="images/icons/phone.svg" alt="" width="18" height="18">
+                    (08) 9434 4055
                 </a>
-            </div>
-
-            <nav class="site-footer__nav" aria-label="Footer navigation">
-                <ul class="site-footer__links">
-                    <li><a href="filmography.html" title="Filmography">Filmography</a></li>
-                    <li><a href="services.html" title="Services">Services</a></li>
-                    <li><a href="people.html" title="People">People</a></li>
-                </ul>
-            </nav>
-
-
-            <nav class="site-footer__nav" aria-label="Footer navigation">
-                <ul class="site-footer__links">
-                    <li><a href="news.html" title="News &amp; Insights">News &amp; Insights</a></li>
-                    <li><a href="careers.html" title="Careers">Careers</a></li>
-                    <li><a href="contact.html" title="Contact">Contact</a></li>
-                </ul>
-            </nav>
-
-            <div class="site-footer__updates">
-                <span class="site-footer__label">Keep updated</span>
-                <a class="site-footer__subscribe" href="contact.html" title="Subscribe to our news">Subscribe to our news</a>
-            </div>
-
-            <div class="site-footer__social">
-                <span class="site-footer__label">Follow us</span>
-                <ul class="social-list">
-                    <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on Instagram (opens in new tab)"><img src="images/social/instagram.svg" alt=""></a></li>
-                    <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on Facebook (opens in new tab)"><img src="images/social/facebook.svg" alt=""></a></li>
-                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on LinkedIn (opens in new tab)"><img src="images/social/linkedin.svg" alt=""></a></li>
-                    <li class="social-list__imdb"><a href="https://imdb.com" target="_blank" rel="noopener noreferrer" aria-label="Cause and FX on IMDb (opens in new tab)"><img src="images/social/imdb.svg" alt=""></a></li>
-                </ul>
+                <div class="site-footer__location">
+                    Perth, Western Australia<br>
+                    Servicing Perth &amp; regional WA
+                </div>
             </div>
         </div>
-
-        <div class="site-footer__bottom c-row">
-            <div class="site-footer__copyright">
-                <p>&copy; <span class="footer-year">2026</span> Cause and FX.</p>
+        <div class="site-footer__bar">
+            <div class="site-footer__bar-copy">&copy; <span class="js-year">2026</span> Reinforced Concrete Pipes Australia (RCPA). All rights reserved.</div>
+            <div class="site-footer__bar-links">
+                <a href="#">rcpa.com.au</a>
+                <a href="#">Terms &amp; Conditions</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Legal</a>
             </div>
-            <a class="site-footer__terms" href="https://causeandfx.nz/copyright" target="_blank" rel="noopener noreferrer">Terms of Use &amp; Privacy Policy <span class="sr-only">(opens in new tab)</span></a>
         </div>
+    </div>
 </footer>
 
-<!-- ==========================================================
-     SHOW REEL OVERLAY — full-bleed black, closes on X / Esc / backdrop
-     ========================================================== -->
-<div class="reel-modal" id="show-reel" role="dialog" aria-modal="true" aria-label="Cause and FX show reel" hidden>
-    <button class="reel-modal__close js-reel-close" type="button" aria-label="Close video">
-        <span></span>
-        <span></span>
-    </button>
-
-    <div class="reel-modal__stage">
-        <!-- Full-length reel, Vimeo-hosted with Vimeo's own play/pause controls.
-             Swap the id in data-src for the client's video. The src is only set
-             when the overlay opens and cleared on close, so the embed does not
-             load with the page and playback stops when it is dismissed. -->
-        <iframe class="reel-modal__video js-reel-video"
-                data-src="https://player.vimeo.com/video/1168653963?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
-                title="Cause and FX show reel"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen></iframe>
-    </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="js/general.js"></script>
-
 </body>
 </html>
